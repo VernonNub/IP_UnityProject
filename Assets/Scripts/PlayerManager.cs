@@ -31,6 +31,11 @@ public class PlayerManager : MonoBehaviour
         cc = gameObject.GetComponent<CharacterController>();
     }
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
     private void Update()
     {
         HandleRayCast();
@@ -56,7 +61,11 @@ public class PlayerManager : MonoBehaviour
 
     private void HandleInteraction()
     {
-
+        if (interactibleManager != null)
+        {
+            interactibleManager.playerManager = this;
+            interactibleManager.RunInteraction();
+        }
     }
 
     private void HandlePlayerSanity()

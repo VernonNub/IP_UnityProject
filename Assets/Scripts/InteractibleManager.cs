@@ -2,15 +2,31 @@ using UnityEngine;
 
 public class InteractibleManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [Header("Interaction Details")]
+    public PlayerManager playerManager;
+    public string name;
+    public string requiredItem = "";
+
+    public enum InteractType
     {
-        
+        NPC,
+        Door,
+        Collect,
     }
 
-    // Update is called once per frame
-    void Update()
+    public InteractType interactType;
+
+    public void RunInteraction()
     {
-        
+        if (requiredItem == "" || playerManager.inventory.Contains(requiredItem))
+        {
+            switch(interactType)
+            {
+                case InteractType.Collect:
+                    playerManager.inventory.Add(name);
+                    Destroy(gameObject);
+                    break;
+            }
+        }
     }
 }
