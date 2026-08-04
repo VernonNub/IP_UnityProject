@@ -14,6 +14,10 @@ public class InteractibleManager : MonoBehaviour
         NPC,
         Door,
         Collect,
+        Windows,
+        Vape,
+        HideItem,
+        
     }
 
     public InteractType interactType;
