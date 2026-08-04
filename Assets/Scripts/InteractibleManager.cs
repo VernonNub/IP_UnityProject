@@ -1,3 +1,5 @@
+using NUnit.Framework.Internal;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class InteractibleManager : MonoBehaviour
@@ -25,6 +27,20 @@ public class InteractibleManager : MonoBehaviour
                 case InteractType.Collect:
                     playerManager.inventory.Add(name);
                     Destroy(gameObject);
+                    break;
+                
+                case InteractType.NPC:
+                    AIManager manager = gameObject.GetComponent<AIManager>();
+                    if(manager.isTalking)
+                    {
+                        manager.changeState = true;
+                        manager.isTalking = false;
+                    }
+                    else
+                    {
+                        manager.playerManager = playerManager;
+                        manager.TalkToPlayer(); 
+                    }
                     break;
             }
         }
