@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    private void ChangePOV()
+    private void ChangePOV(int pov)
     {
         //Updates the Dictionary (Saves the current player stats)
         povStats[playerPOV]["Sanity"] = playerManager.playerSanity;
@@ -46,11 +46,11 @@ public class GameManager : MonoBehaviour
         povStats[playerPOV]["Happiness"] = playerManager.playerHappiness;
 
         //Changes the POV
-        playerPOV = 1;
+        playerPOV = pov;
 
         //Updates the playerManager
-        playerManager.playerSanity = povStats[playerPOV]["Sanity"];
-        playerManager.playerAddiction = povStats[playerPOV]["Addiction"];
-        playerManager.playerHappiness = povStats[playerPOV]["Happiness"];
+        playerManager.playerSanity = povStats[pov]["Sanity"];
+        playerManager.playerAddiction = povStats[pov]["Addiction"];
+        playerManager.playerHappiness = povStats[pov]["Happiness"];
     }
 }
