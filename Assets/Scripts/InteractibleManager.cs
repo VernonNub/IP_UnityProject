@@ -35,16 +35,8 @@ public class InteractibleManager : MonoBehaviour
                 
                 case InteractType.NPC:
                     AIManager manager = gameObject.GetComponent<AIManager>();
-                    if(manager.isTalking)
-                    {
-                        manager.changeState = true;
-                        manager.isTalking = false;
-                    }
-                    else
-                    {
-                        manager.playerManager = playerManager;
-                        manager.TalkToPlayer(); 
-                    }
+                    manager.playerManager = playerManager;
+                    manager.TalkToPlayer(); 
                     break;
             }
         }

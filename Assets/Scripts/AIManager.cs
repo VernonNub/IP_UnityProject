@@ -48,4 +48,10 @@ public class AIManager : MonoBehaviour
         Vector3 rotation = playerManager.gameObject.transform.position;
         gameObject.transform.LookAt(rotation);
     }
+
+    public void StopTalkingToPlayer()
+    {
+        changeState = true;
+        isTalking = false;
+    }
 }
