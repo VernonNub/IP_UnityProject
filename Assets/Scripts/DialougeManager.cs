@@ -7,50 +7,66 @@ using System.Collections;
 public class DialougeManager : MonoBehaviour
 {
     public static DialougeManager instance;
+    [SerializeField] PlayerManager player;
+    public AIManager ai;
+
+    public string speaker = "who?";
+    private bool goNext = false;
 
     [Header("DialougeBoxUiElements")]
     public Canvas dialougeUI;
     public TMP_Text dialouge;
     public TMP_Text speakerName;
-    public Button option1;
-    public Button option2;
+    public GameObject option1;
+    public GameObject option2;
     public TMP_Text option1Text;
     public TMP_Text option2Text;
-
-    private string dialougeTextToDisplay;
 
     [Header("TypeWriterFX stats")]
     [SerializeField] float textSpeed = 20f;
     public bool isTyping;
-    public bool isOpen;
 
     [Header("DialougeTexts")]
-    private Dictionary<int, Dictionary<string, object>> HappyConverstion = new Dictionary<int, Dictionary<string, object>>()
-    {
-        {1, new Dictionary<string, object>()
+    //Conversation (ALL POSSIBLE CONVOS FOR NPC)
+    private Dictionary<string, Dictionary<int, Dictionary<string, object>>> npc1Conversations =  new Dictionary<string, Dictionary<int, Dictionary<string, object>>>()
+    { 
+        //Each dialouge in the conversation
+        { "HappyConversation", new Dictionary<int, Dictionary<string, object>>()
             {
-                {"Text", "pneumonoultramicroscopicsilicovolcanoconiosis"},
-                {"Option1", "should i pneumonoultramicroscopicsilicovolcanoconiosis" },
-                {"Option2", "I should leave" },
-                {"Option1Result", 1 },
-                {"Option2Result", -1 },
-                {"Option1Stat", new List<float>(){0, 0, 0, 0} },
-                {"Option2Stat", new List<float>(){0, 0, 0, 0} }
-            }
-        },
+                //Details of each dialouge (What are the options? what are the results? How does the stat change?)
+                {1, new Dictionary<string, object>()
+                    {
+                        {"Text", "pneumonoultramicroscopicsilicovolcanoconiosis"},
+                        {"Option1", "should i pneumonoultramicroscopicsilicovolcanoconiosis" },
+                        {"Option2", "I should leave" },
+                        {"Option1Result", 2 },
+                        {"Option2Result", -1 },
+                        {"Option1Stat", new List<float>(){0, 0, 0, 0} },
+                        {"Option2Stat", new List<float>(){0, 0, 0, 0} }
+                    }
+                },
 
-        {2, new Dictionary<string, object>()
-            {
-                {"Text", "pneumonoultramicroscopicsilicovolcanoconiosis"},
-                {"Option1", "should i pneumonoultramicroscopicsilicovolcanoconiosis" },
-                {"Option2", "I should leave" },
-                {"Option1Result", 1 },
-                {"Option2Result", -1 },
-                {"Option1Stat", new List<float>(){0, 0, 0, 0} },
-                {"Option2Stat", new List<float>(){0, 0, 0, 0} }
-            }
-        },
+                {2, new Dictionary<string, object>()
+                    {
+                        {"Text", "No pneumonoultramicroscopicsilicovolcanoconiosis"},
+                        {"Option1", "should i pneumonoultramicroscopicsilicovolcanoconiosis" },
+                        {"Option2", "I should leave" },
+                        {"Option1Result", 0 },
+                        {"Option2Result", -1 },
+                        {"Option1Stat", new List<float>(){0, 0, 0, 0} },
+                        {"Option2Stat", new List<float>(){0, 0, 0, 0} }
+                    }
+                },
+            } 
+        }
     };
+
+    //Keeps the index of dialouge progress
+    [SerializeField] int dialougeIndex = 1;
+    //DisplayText
+    private string dialougeTextToDisplay;
+    //ConversationName
+    private string convoName = "HappyConversation";
 
 
     private void Awake()
@@ -64,27 +80,76 @@ public class DialougeManager : MonoBehaviour
             instance = this;
         }
 
-
         DontDestroyOnLoad(gameObject);
         DontDestroyOnLoad(dialougeUI);
     }
 
-    public void DisplayDialouge(string speaker)
+    private void OnEnable()
     {
-        speakerName.text = speaker;
-        StartCoroutine(TypeOutDialouge());
+        //Add listeners for onclick
+        option1.GetComponentInChildren<Button>().onClick.AddListener(() => ChooseOption(1));
+        option2.GetComponentInChildren<Button>().onClick.AddListener(() => ChooseOption(2));
     }
 
     public void Fastforward()
     {
-        StopAllCoroutines();
-        dialouge.text = dialougeTextToDisplay;
-        isTyping = false;
-    }
+        if(isTyping)
+        {
+            StopAllCoroutines();
+            dialouge.text = dialougeTextToDisplay;
+            isTyping = false;
+            StartCoroutine(DisplayOptions());
+        }
+        else if (goNext)
+        {
+            goNext = false;
+            RunConversation();
+        }
+    }   
+        
 
     public void RunConversation()
     {
 
+        OpenUI();
+
+        //Get the text to display
+        dialougeTextToDisplay = npc1Conversations[convoName][dialougeIndex]["Text"].ToString();
+        speakerName.text = speaker;
+        StartCoroutine(TypeOutDialouge());
+    }
+
+    private IEnumerator DisplayOptions()
+    {
+        //If dialouge has no options
+        if ((int)npc1Conversations[convoName][dialougeIndex]["Option1Result"] == 0)
+        {
+            option1.SetActive(false);
+            option2.SetActive(false);
+
+            //Option 1 determines if there are options or not, option 2 determines where the convo goes when there are no options
+            if((int)npc1Conversations[convoName][dialougeIndex]["Option2Result"] < 0)
+            {
+                CloseUI();
+            }
+            else
+            {
+                dialougeIndex = (int)npc1Conversations[convoName][dialougeIndex]["Option2Result"];
+                goNext = true;
+            } 
+        }
+        //If dialouge has options
+        else
+        {
+            option1.SetActive(true);
+            option2.SetActive(true);
+
+            //Update buttons to contain the options
+            option1Text.text = npc1Conversations[convoName][dialougeIndex]["Option1"].ToString();
+            option2Text.text = npc1Conversations[convoName][dialougeIndex]["Option2"].ToString();
+        }
+
+        yield return null;
     }
 
     private IEnumerator TypeOutDialouge()
@@ -94,12 +159,60 @@ public class DialougeManager : MonoBehaviour
         dialouge.text = string.Empty;
         float delay = 1f / textSpeed;
 
+        //Types out eacher character 1 by 1 and waits to create the typewriter FX
         foreach (char c in dialougeTextToDisplay)
         {
             dialouge.text += c;
             yield return new WaitForSeconds(delay);
         }
 
+        //Shows Options
         isTyping = false;
+
+        yield return DisplayOptions();
+    }
+
+    private void ChooseOption(int option)
+    {
+        //Removes options
+        option1.SetActive(false);
+        option2.SetActive(false);
+
+        //Changes the dialougeIndex and changes the playerStats
+        ChangePlayerStats((List<float>)npc1Conversations[convoName][dialougeIndex]["Option" + option + "Stat"]);
+
+        if ((int)npc1Conversations[convoName][dialougeIndex]["Option" + option + "Result"] < 0)
+        {
+            //Negative = end of dialouge --> close UI, changes dialouge back to 1 (Start of every convo)
+            CloseUI();
+            dialougeIndex = 1;
+        }
+        else
+        {
+            dialougeIndex = (int)npc1Conversations[convoName][dialougeIndex]["Option" + option + "Result"];
+            RunConversation();
+        }
+    }
+
+    private void ChangePlayerStats(List<float> stats)
+    {
+        //Changes the playerstats based on each item in lists (Fixed: addiction, happiness, npc1, npc2)
+        player.playerAddiction = stats[0];
+        player.playerHappiness = stats[1];
+        player.npcRelation1 = stats[2];
+        player.npcRelation2 = stats[3];
+    }
+
+    private void CloseUI()
+    {
+        dialougeUI.gameObject.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        ai.StopTalkingToPlayer();
+    }
+
+    private void OpenUI()
+    {
+        dialougeUI.gameObject.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
     }
 }

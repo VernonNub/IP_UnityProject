@@ -6,7 +6,7 @@ public class InteractibleManager : MonoBehaviour
 {
     [Header("Interaction Details")]
     public PlayerManager playerManager;
-    public string name;
+    public string interactibleName;
     public string requiredItem = "";
 
     public enum InteractType
@@ -36,7 +36,12 @@ public class InteractibleManager : MonoBehaviour
                 case InteractType.NPC:
                     AIManager manager = gameObject.GetComponent<AIManager>();
                     manager.playerManager = playerManager;
-                    manager.TalkToPlayer(); 
+                    manager.TalkToPlayer();
+
+                    DialougeManager.instance.speaker = interactibleName;
+                    DialougeManager.instance.RunConversation();
+
+                    DialougeManager.instance.ai = manager;
                     break;
             }
         }

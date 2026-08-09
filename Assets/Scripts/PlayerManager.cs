@@ -79,9 +79,6 @@ public class PlayerManager : MonoBehaviour
 
     void OnClick()
     {
-        if(DialougeManager.instance.isTyping = true)
-        {
-            DialougeManager.instance.Fastforward();
-        }
+        DialougeManager.instance.Fastforward();
     }
 }

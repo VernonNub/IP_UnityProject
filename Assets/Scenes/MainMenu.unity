@@ -1041,6 +1041,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 452543657}
   m_CullTransparentMesh: 1
+--- !u!1 &608234119
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 608234121}
+  - component: {fileID: 608234120}
+  m_Layer: 0
+  m_Name: DialougeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &608234120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608234119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c7f057beff97f94f9cba18b21f58a5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialougeManager
+  dialougeUI: {fileID: 108063147}
+  dialouge: {fileID: 963955638}
+  speakerName: {fileID: 2109814321}
+  option1: {fileID: 664263225}
+  option2: {fileID: 1111436165}
+  option1Text: {fileID: 1474203159}
+  option2Text: {fileID: 612381649}
+  textSpeed: 15
+  isTyping: 0
+  isOpen: 0
+--- !u!4 &608234121
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608234119}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.65445, y: 1.87049, z: 1.14553}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &612381647
 GameObject:
   m_ObjectHideFlags: 0
@@ -3764,6 +3818,8 @@ MonoBehaviour:
   playerSanity: 100
   playerAddiction: 0
   playerHappiness: 50
+  npcRelation1: 100
+  npcRelation2: 100
   raycastLength: 3
   inventory: []
   checkPoint: {fileID: 0}
@@ -3790,3 +3846,4 @@ SceneRoots:
   - {fileID: 61236135}
   - {fileID: 108063148}
   - {fileID: 1969871727}
+  - {fileID: 608234121}
