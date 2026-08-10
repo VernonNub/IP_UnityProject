@@ -56,6 +56,7 @@ public class VapingStudentManager : AIManager
                 MoveToDestination();
                 break;
             case AiStates.Talking:
+                ActionFinished();
                 changeState = false;
                 break;
 

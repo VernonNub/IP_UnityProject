@@ -1,0 +1,46 @@
+{
+  "HappyConversationNPC1": {
+    "1": {
+      "Text": "a b c d e f g h i j k l m n o p q r s t u v w x y z",
+      "Option1": "1 a b c d e f g h i j k l m n o p q r s t u v w x y z",
+      "Option2": "I should leave",
+      "Option1Result": 2,
+      "Option2Result": -1,
+      "Option1Stat": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "Option2Stat": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "2": {
+      "Text": "a b c d e f g h i j k l m n o p q r s t u v w x y z",
+      "Option1": "2 a b c d e f g h i j k l m n o p q r s t u v w x y z",
+      "Option2": "",
+      "Option1Result": 0,
+      "Option2Result": -1,
+      "Option1Stat": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "Option2Stat": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  }
+}

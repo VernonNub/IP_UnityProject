@@ -3,6 +3,8 @@ using TMPro;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Collections;
+using System;
+using Newtonsoft.Json.Linq;
 
 public class DialougeManager : MonoBehaviour
 {
@@ -28,37 +30,9 @@ public class DialougeManager : MonoBehaviour
 
     [Header("DialougeTexts")]
     //Conversation (ALL POSSIBLE CONVOS FOR NPC)
-    private Dictionary<string, Dictionary<int, Dictionary<string, object>>> npcConversations =  new Dictionary<string, Dictionary<int, Dictionary<string, object>>>()
+    public Dictionary<string, Dictionary<int, Dictionary<string, object>>> npcConversations =  new Dictionary<string, Dictionary<int, Dictionary<string, object>>>()
     { 
-        //Each dialouge in the conversation
-        { "HappyConversationNPC1", new Dictionary<int, Dictionary<string, object>>()
-            {
-                //Details of each dialouge (What are the options? what are the results? How does the stat change?)
-                {1, new Dictionary<string, object>()
-                    {
-                        {"Text", "pneumonoultramicroscopicsilicovolcanoconiosis"},
-                        {"Option1", "should i pneumonoultramicroscopicsilicovolcanoconiosis" },
-                        {"Option2", "I should leave" },
-                        {"Option1Result", 2 },
-                        {"Option2Result", -1 },
-                        {"Option1Stat", new List<float>(){0, 0, 0, 0, 0} },
-                        {"Option2Stat", new List<float>(){0, 0, 0, 0, 0 } }
-                    }
-                },
-
-                {2, new Dictionary<string, object>()
-                    {
-                        {"Text", "No pneumonoultramicroscopicsilicovolcanoconiosis"},
-                        {"Option1", "should i pneumonoultramicroscopicsilicovolcanoconiosis" },
-                        {"Option2", "I should leave" },
-                        {"Option1Result", 0 },
-                        {"Option2Result", -1 },
-                        {"Option1Stat", new List<float>(){0, 0, 0, 0, 0 } },
-                        {"Option2Stat", new List<float>(){0, 0, 0, 0, 0 } }
-                    }
-                },
-            } 
-        }
+        
     };
 
     //Keeps the index of dialouge progress
@@ -131,19 +105,20 @@ public class DialougeManager : MonoBehaviour
     private IEnumerator DisplayOptions()
     {
         //If dialouge has no options
-        if ((int)npcConversations[convoName][dialougeIndex]["Option1Result"] == 0)
+        Debug.Log(npcConversations[convoName][dialougeIndex]["Option1Result"]);
+        if (Convert.ToInt32(npcConversations[convoName][dialougeIndex]["Option1Result"]) == 0)
         {
             option1.SetActive(false);
             option2.SetActive(false);
 
             //Option 1 determines if there are options or not, option 2 determines where the convo goes when there are no options
-            if((int)npcConversations[convoName][dialougeIndex]["Option2Result"] < 0)
+            if(Convert.ToInt32(npcConversations[convoName][dialougeIndex]["Option2Result"]) < 0)
             {
                 CloseUI();
             }
             else
             {
-                dialougeIndex = (int)npcConversations[convoName][dialougeIndex]["Option2Result"];
+                dialougeIndex = Convert.ToInt32(npcConversations[convoName][dialougeIndex]["Option2Result"]);
                 goNext = true;
             } 
         }
@@ -188,16 +163,19 @@ public class DialougeManager : MonoBehaviour
         option2.SetActive(false);
 
         //Changes the dialougeIndex and changes the playerStats
-        ChangePlayerStats((List<float>)npcConversations[convoName][dialougeIndex]["Option" + option + "Stat"]);
+        Debug.Log(npcConversations[convoName][dialougeIndex]["Option" + option + "Stat"]);
 
-        if ((int)npcConversations[convoName][dialougeIndex]["Option" + option + "Result"] < 0)
+        JToken statData = (JToken)npcConversations[convoName][dialougeIndex]["Option" + option + "Stat"];
+        ChangePlayerStats(statData.ToObject<List<float>>());
+
+        if (Convert.ToInt32(npcConversations[convoName][dialougeIndex]["Option" + option + "Result"]) < 0)
         {
             //Negative = end of dialouge --> close UI, changes dialouge back to 1 (Start of every convo)
             CloseUI();
         }
         else
         {
-            dialougeIndex = (int)npcConversations[convoName][dialougeIndex]["Option" + option + "Result"];
+            dialougeIndex = Convert.ToInt32(npcConversations[convoName][dialougeIndex]["Option" + option + "Result"]);
             RunConversation();
         }
     }
