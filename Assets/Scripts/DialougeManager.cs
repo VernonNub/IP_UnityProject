@@ -28,10 +28,10 @@ public class DialougeManager : MonoBehaviour
 
     [Header("DialougeTexts")]
     //Conversation (ALL POSSIBLE CONVOS FOR NPC)
-    private Dictionary<string, Dictionary<int, Dictionary<string, object>>> npc1Conversations =  new Dictionary<string, Dictionary<int, Dictionary<string, object>>>()
+    private Dictionary<string, Dictionary<int, Dictionary<string, object>>> npcConversations =  new Dictionary<string, Dictionary<int, Dictionary<string, object>>>()
     { 
         //Each dialouge in the conversation
-        { "HappyConversation", new Dictionary<int, Dictionary<string, object>>()
+        { "HappyConversationNPC1", new Dictionary<int, Dictionary<string, object>>()
             {
                 //Details of each dialouge (What are the options? what are the results? How does the stat change?)
                 {1, new Dictionary<string, object>()
@@ -41,8 +41,8 @@ public class DialougeManager : MonoBehaviour
                         {"Option2", "I should leave" },
                         {"Option1Result", 2 },
                         {"Option2Result", -1 },
-                        {"Option1Stat", new List<float>(){0, 0, 0, 0} },
-                        {"Option2Stat", new List<float>(){0, 0, 0, 0} }
+                        {"Option1Stat", new List<float>(){0, 0, 0, 0, 0} },
+                        {"Option2Stat", new List<float>(){0, 0, 0, 0, 0 } }
                     }
                 },
 
@@ -53,8 +53,8 @@ public class DialougeManager : MonoBehaviour
                         {"Option2", "I should leave" },
                         {"Option1Result", 0 },
                         {"Option2Result", -1 },
-                        {"Option1Stat", new List<float>(){0, 0, 0, 0} },
-                        {"Option2Stat", new List<float>(){0, 0, 0, 0} }
+                        {"Option1Stat", new List<float>(){0, 0, 0, 0, 0 } },
+                        {"Option2Stat", new List<float>(){0, 0, 0, 0, 0 } }
                     }
                 },
             } 
@@ -66,7 +66,7 @@ public class DialougeManager : MonoBehaviour
     //DisplayText
     private string dialougeTextToDisplay;
     //ConversationName
-    private string convoName = "HappyConversation";
+    private string convoName;
 
 
     private void Awake()
@@ -110,31 +110,40 @@ public class DialougeManager : MonoBehaviour
 
     public void RunConversation()
     {
+        convoName = "HappyConversation" + speaker;
+
+        if (!npcConversations.ContainsKey(convoName))
+        {
+            Debug.Log(ai);
+            CloseUI();
+            return;
+        }
 
         OpenUI();
 
         //Get the text to display
-        dialougeTextToDisplay = npc1Conversations[convoName][dialougeIndex]["Text"].ToString();
+        dialougeTextToDisplay = npcConversations[convoName][dialougeIndex]["Text"].ToString();
         speakerName.text = speaker;
         StartCoroutine(TypeOutDialouge());
+
     }
 
     private IEnumerator DisplayOptions()
     {
         //If dialouge has no options
-        if ((int)npc1Conversations[convoName][dialougeIndex]["Option1Result"] == 0)
+        if ((int)npcConversations[convoName][dialougeIndex]["Option1Result"] == 0)
         {
             option1.SetActive(false);
             option2.SetActive(false);
 
             //Option 1 determines if there are options or not, option 2 determines where the convo goes when there are no options
-            if((int)npc1Conversations[convoName][dialougeIndex]["Option2Result"] < 0)
+            if((int)npcConversations[convoName][dialougeIndex]["Option2Result"] < 0)
             {
                 CloseUI();
             }
             else
             {
-                dialougeIndex = (int)npc1Conversations[convoName][dialougeIndex]["Option2Result"];
+                dialougeIndex = (int)npcConversations[convoName][dialougeIndex]["Option2Result"];
                 goNext = true;
             } 
         }
@@ -145,8 +154,8 @@ public class DialougeManager : MonoBehaviour
             option2.SetActive(true);
 
             //Update buttons to contain the options
-            option1Text.text = npc1Conversations[convoName][dialougeIndex]["Option1"].ToString();
-            option2Text.text = npc1Conversations[convoName][dialougeIndex]["Option2"].ToString();
+            option1Text.text = npcConversations[convoName][dialougeIndex]["Option1"].ToString();
+            option2Text.text = npcConversations[convoName][dialougeIndex]["Option2"].ToString();
         }
 
         yield return null;
@@ -179,32 +188,34 @@ public class DialougeManager : MonoBehaviour
         option2.SetActive(false);
 
         //Changes the dialougeIndex and changes the playerStats
-        ChangePlayerStats((List<float>)npc1Conversations[convoName][dialougeIndex]["Option" + option + "Stat"]);
+        ChangePlayerStats((List<float>)npcConversations[convoName][dialougeIndex]["Option" + option + "Stat"]);
 
-        if ((int)npc1Conversations[convoName][dialougeIndex]["Option" + option + "Result"] < 0)
+        if ((int)npcConversations[convoName][dialougeIndex]["Option" + option + "Result"] < 0)
         {
             //Negative = end of dialouge --> close UI, changes dialouge back to 1 (Start of every convo)
             CloseUI();
-            dialougeIndex = 1;
         }
         else
         {
-            dialougeIndex = (int)npc1Conversations[convoName][dialougeIndex]["Option" + option + "Result"];
+            dialougeIndex = (int)npcConversations[convoName][dialougeIndex]["Option" + option + "Result"];
             RunConversation();
         }
     }
 
     private void ChangePlayerStats(List<float> stats)
     {
-        //Changes the playerstats based on each item in lists (Fixed: addiction, happiness, npc1, npc2)
-        player.playerAddiction = stats[0];
-        player.playerHappiness = stats[1];
-        player.npcRelation1 = stats[2];
-        player.npcRelation2 = stats[3];
+        //Changes the playerstats based on each item in lists (Fixed: addiction, happiness, npc1, npc2, npcHappiness)
+        player.playerAddiction += stats[0];
+        player.playerHappiness += stats[1];
+        player.npcRelation1 += stats[2];
+        player.npcRelation2 += stats[3];
+
+        ai.happiness += stats[4];
     }
 
     private void CloseUI()
     {
+        dialougeIndex = 1;
         dialougeUI.gameObject.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         ai.StopTalkingToPlayer();

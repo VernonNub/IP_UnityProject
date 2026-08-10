@@ -7,11 +7,23 @@ using UnityEngine.Assemblies;
 public class AIManager : MonoBehaviour
 {
     public PlayerManager playerManager;
+
+    [Header("AI Details")]
     public List<Transform> navigationPoints = new List<Transform>();
+    public Dictionary<Vector3, string> aiAction = new Dictionary<Vector3, string>()
+    {
+        //Keep your Y axis 0 for everything
+        {new Vector3(4.77f,0f,-14.52f), "Talking"}
+    };
     [SerializeField] NavMeshAgent aiAgent;
     [SerializeField] Transform targetDestination;
+
     public bool changeState = true;
+
     public bool isTalking = false;
+    public bool actionPerformed = false;
+
+    public float happiness = 50f;
 
     void OnEnable()
     {
@@ -21,6 +33,7 @@ public class AIManager : MonoBehaviour
     protected void MoveToDestination()
     {
         Transform destination = navigationPoints[Random.Range(0, navigationPoints.Count)];
+
         if(destination != targetDestination)
         {
             targetDestination = destination;

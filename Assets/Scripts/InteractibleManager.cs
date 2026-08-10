@@ -38,10 +38,10 @@ public class InteractibleManager : MonoBehaviour
                     manager.playerManager = playerManager;
                     manager.TalkToPlayer();
 
+                    DialougeManager.instance.ai = manager;
+
                     DialougeManager.instance.speaker = interactibleName;
                     DialougeManager.instance.RunConversation();
-
-                    DialougeManager.instance.ai = manager;
                     break;
             }
         }
