@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using NUnit.Framework;
 using UnityEditor.Search;
 using UnityEngine;
@@ -6,7 +7,7 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     [Header("Player Stats")]
-    public float playerHealth;
+    public float playerHealth = 100;
     public float playerSanity = 100;
     public float playerAddiction = 0;
     public float playerHappiness = 50;
@@ -21,7 +22,8 @@ public class PlayerManager : MonoBehaviour
     public List<string> inventory = new List<string>();
 
     [Header("Components")]
-    private Camera playerCamera;
+    [SerializeField] Camera playerCamera;
+    [SerializeField] GameObject playerFollowCamera;
     private CharacterController cc;
     public GameObject checkPoint;
 
@@ -29,19 +31,25 @@ public class PlayerManager : MonoBehaviour
 
     private void OnEnable()
     {
-        playerCamera = GameObject.Find("PlayerCamera").GetComponent<Camera>();
         cc = gameObject.GetComponent<CharacterController>();
     }
 
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(playerCamera);
+        DontDestroyOnLoad(playerFollowCamera);
     }
 
     private void Update()
     {
         HandleRayCast();
         HandlePlayerSanity();
+
+        if(playerHealth <= 0)
+        {
+            HandleDeath();
+        }
     }
     
     void OnInteract()
@@ -54,10 +62,12 @@ public class PlayerManager : MonoBehaviour
         if(Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out RaycastHit hit, raycastLength, mask))
         {
             interactibleManager = hit.collider.gameObject.GetComponent<InteractibleManager>();
+            UIManager.instance.ShowInteractPrompt(interactibleManager.interactibleName, interactibleManager.interactType);
         }
         else
         {
             interactibleManager = null;
+            UIManager.instance.interactPrompt.SetActive(false);
         }
     }
 
@@ -72,13 +82,30 @@ public class PlayerManager : MonoBehaviour
 
     private void HandlePlayerSanity()
     {
-        float sanityValue = (1 + 0.01f * (100 - playerHappiness)) * 0.1f * (playerAddiction);
-
-        playerSanity -= sanityValue * Time.deltaTime;
+        if(playerSanity >= 0)
+        {
+            float sanityValue = (1 + 0.01f * (100 - playerHappiness)) * 0.1f * (playerAddiction);
+            playerSanity -= sanityValue * Time.deltaTime;
+        }
+        else
+        {
+            playerHealth -= 10 * Time.deltaTime;
+        }
+        
     }
 
     void OnClick()
     {
         DialougeManager.instance.Fastforward();
+    }
+
+    private void HandleDeath()
+    {
+        UIManager.instance.ShowDeathPopUp();
+    }
+
+    private void ResetPlayer()
+    {
+        
     }
 }

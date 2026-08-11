@@ -1,16 +1,77 @@
+using TMPro;
+using Unity.Multiplayer.Center.Common.Analytics;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public static UIManager instance;
+
+    [SerializeField] PlayerManager player;
+    [SerializeField] Slider sanityBar;
+    [SerializeField] Slider healthBar;
+    public GameObject interactPrompt;
+    public GameObject deathPopUp;
+
+    public GameObject UIElement;
+
+    private void Awake()
     {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+
+        DontDestroyOnLoad(UIElement);
+    }
+
+    void Update()
+    {
+        UpdateStatusBars();
+    }
+
+    private void UpdateStatusBars()
+    {
+        if(sanityBar != null && healthBar != null)
+        {
+            sanityBar.maxValue = 100;
+            sanityBar.value = player.playerSanity;
+            healthBar.maxValue = 100;
+            healthBar.value = player.playerHealth;
+        }
+        else
+        {
+            sanityBar = GameObject.Find("SanityBar").GetComponent<Slider>();
+            healthBar = GameObject.Find("HealthBar").GetComponent<Slider>();
+        }
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ShowInteractPrompt(string name, InteractibleManager.InteractType interactType)
     {
-        
+        if(interactPrompt != null)
+        {
+            TMP_Text text = interactPrompt.GetComponentsInChildren<TMP_Text>()[1];
+            if(interactType == InteractibleManager.InteractType.NPC)
+            {
+                text.text = "Talk to " + name;
+            }
+            else
+            {
+                text.text = "Interact with " + name;
+            }
+
+            interactPrompt.SetActive(true);
+        }
+    }
+
+    public void ShowDeathPopUp()
+    {
+        deathPopUp.SetActive(true);
     }
 }

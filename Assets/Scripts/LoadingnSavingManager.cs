@@ -11,15 +11,13 @@ public class LoadingnSavingManager : MonoBehaviour
 
     private void Start()
     {
+        
         DialougeManager.instance.npcConversations = LoadData();
     }
 
     private void Update()
     {
-        if (!DialougeManager.instance.npcConversations.ContainsKey("HappyConversationNPC1"))
-        {
-            print("YIKES");
-        }
+        //Cursor.lockState = CursorLockMode.None;
     }
 
     private void SaveData()
