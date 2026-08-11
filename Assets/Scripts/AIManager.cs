@@ -24,6 +24,7 @@ public class AIManager : MonoBehaviour
     public bool actionPerformed = false;
 
     public float happiness = 50f;
+    public float relationship = 50f;
 
     void OnEnable()
     {

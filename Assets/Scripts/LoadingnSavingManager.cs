@@ -13,6 +13,7 @@ public class LoadingnSavingManager : MonoBehaviour
     {
         
         DialougeManager.instance.npcConversations = LoadData();
+        //SaveData();
     }
 
     private void Update()

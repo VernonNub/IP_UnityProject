@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63f8f3c1cc3571940a24dd7733f32db4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  storyProgress: 0
+  storyProgress: 1

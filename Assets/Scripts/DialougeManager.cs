@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Collections;
 using System;
 using Newtonsoft.Json.Linq;
+using JetBrains.Annotations;
 
 public class DialougeManager : MonoBehaviour
 {
@@ -40,7 +41,14 @@ public class DialougeManager : MonoBehaviour
     //DisplayText
     private string dialougeTextToDisplay;
     //ConversationName
-    private string convoName;
+    [SerializeField] string convoName;
+
+    private List<int> chooseConvo = new List<int>()
+    {
+        0,
+        0,
+        0
+    };
 
 
     private void Awake()
@@ -81,14 +89,50 @@ public class DialougeManager : MonoBehaviour
         }
     }   
         
+    private void ChooseConversation()
+    {
+        chooseConvo[0] = GameManager.instance.storyProgress;
+
+        if(ai.happiness <= 25)
+        {
+            chooseConvo[1] = 1;
+        } 
+        else if(ai.happiness <= 50)
+        {
+            chooseConvo[1] = 2;
+        }
+        else if(ai.happiness <= 75)
+        {
+            chooseConvo[1] = 3;
+        }
+        else if(ai.happiness <= 100)
+        {
+            chooseConvo[1] = 4;
+        }
+
+        if(ai.relationship <= 50)
+        {
+            chooseConvo[2] = 1;
+        }
+        else
+        {
+            chooseConvo[2] = 2;
+        }
+    }
 
     public void RunConversation()
     {
-        convoName = "HappyConversation" + speaker;
+        ChooseConversation();
+
+        convoName = string.Empty;
+        foreach(int i in chooseConvo)
+        {
+            convoName += i.ToString();
+        }
+        convoName += "Conversation" + speaker;
 
         if (!npcConversations.ContainsKey(convoName))
         {
-            Debug.Log(ai);
             CloseUI();
             return;
         }
@@ -105,7 +149,6 @@ public class DialougeManager : MonoBehaviour
     private IEnumerator DisplayOptions()
     {
         //If dialouge has no options
-        Debug.Log(npcConversations[convoName][dialougeIndex]["Option1Result"]);
         if (Convert.ToInt32(npcConversations[convoName][dialougeIndex]["Option1Result"]) == 0)
         {
             option1.SetActive(false);
@@ -163,8 +206,6 @@ public class DialougeManager : MonoBehaviour
         option2.SetActive(false);
 
         //Changes the dialougeIndex and changes the playerStats
-        Debug.Log(npcConversations[convoName][dialougeIndex]["Option" + option + "Stat"]);
-
         JToken statData = (JToken)npcConversations[convoName][dialougeIndex]["Option" + option + "Stat"];
         ChangePlayerStats(statData.ToObject<List<float>>());
 
@@ -185,10 +226,9 @@ public class DialougeManager : MonoBehaviour
         //Changes the playerstats based on each item in lists (Fixed: addiction, happiness, npc1, npc2, npcHappiness)
         player.playerAddiction += stats[0];
         player.playerHappiness += stats[1];
-        player.npcRelation1 += stats[2];
-        player.npcRelation2 += stats[3];
 
-        ai.happiness += stats[4];
+        ai.relationship += stats[2];
+        ai.happiness += stats[3];
     }
 
     private void CloseUI()

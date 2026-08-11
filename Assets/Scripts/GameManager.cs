@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     };
 
     [Header("Story Progression")]
-    public int storyProgress = 0;
+    public int storyProgress = 1;
     public Dictionary<string, string> storyEvents = new Dictionary<string, string>();
 
     private void Awake()

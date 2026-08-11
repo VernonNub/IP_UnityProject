@@ -11,8 +11,6 @@ public class PlayerManager : MonoBehaviour
     public float playerSanity = 100;
     public float playerAddiction = 0;
     public float playerHappiness = 50;
-    public float npcRelation1 = 100;
-    public float npcRelation2 = 100;
 
     [Header("RayCast")] 
     [SerializeField] float raycastLength = 3;
