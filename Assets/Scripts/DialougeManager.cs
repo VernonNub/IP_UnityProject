@@ -41,11 +41,13 @@ public class DialougeManager : MonoBehaviour
     //DisplayText
     private string dialougeTextToDisplay;
     //ConversationName
-    [SerializeField] string convoName;
+    public string convoName;
+
+    public bool isFixed = false;
+
 
     private List<int> chooseConvo = new List<int>()
     {
-        0,
         0,
         0
     };
@@ -92,37 +94,13 @@ public class DialougeManager : MonoBehaviour
     private void ChooseConversation()
     {
         chooseConvo[0] = GameManager.instance.storyProgress;
-
-        if(ai.happiness <= 25)
-        {
-            chooseConvo[1] = 1;
-        } 
-        else if(ai.happiness <= 50)
-        {
-            chooseConvo[1] = 2;
-        }
-        else if(ai.happiness <= 75)
-        {
-            chooseConvo[1] = 3;
-        }
-        else if(ai.happiness <= 100)
-        {
-            chooseConvo[1] = 4;
-        }
-
-        if(ai.relationship <= 50)
-        {
-            chooseConvo[2] = 1;
-        }
-        else
-        {
-            chooseConvo[2] = 2;
-        }
+        chooseConvo[1] = GameManager.instance.sceneProgress;
     }
 
     public void RunConversation()
     {
-        ChooseConversation();
+        if(!isFixed)
+            ChooseConversation();
 
         convoName = string.Empty;
         foreach(int i in chooseConvo)
@@ -155,15 +133,40 @@ public class DialougeManager : MonoBehaviour
             option2.SetActive(false);
 
             //Option 1 determines if there are options or not, option 2 determines where the convo goes when there are no options
-            if(Convert.ToInt32(npcConversations[convoName][dialougeIndex]["Option2Result"]) < 0)
+            if (Convert.ToInt32(npcConversations[convoName][dialougeIndex]["Option2Result"]) == -1)
             {
+                //Negative = end of dialouge --> close UI, changes dialouge back to 1 (Start of every convo)
+                CloseUI();
+            }
+            else if (Convert.ToInt32(npcConversations[convoName][dialougeIndex]["Option2Result"]) == -2)
+            {
+                //Negative = end of dialouge , -2 = change scene
+                GameManager.instance.storyProgress += 1;
+                GameManager.instance.ChangeScene(GameManager.instance.storyProgress + 1);
+                CloseUI();
+            }
+            else if (Convert.ToInt32(npcConversations[convoName][dialougeIndex]["Option2Result"]) == -3)
+            {
+                //Negative = end of dialouge , -3 = change to roam scene
+                GameManager.instance.storyProgress += 1;
+                GameManager.instance.ChangeScene(4);
+                CloseUI();
+            }
+            else if (Convert.ToInt32(npcConversations[convoName][dialougeIndex]["Option2Result"]) == -4)
+            {
+                GameManager.instance.sceneProgress += 1;
+                CloseUI();
+            }
+            else if (Convert.ToInt32(npcConversations[convoName][dialougeIndex]["Option2Result"]) == -5)
+            {
+                GameManager.instance.sceneProgress += 2;
                 CloseUI();
             }
             else
             {
                 dialougeIndex = Convert.ToInt32(npcConversations[convoName][dialougeIndex]["Option2Result"]);
                 goNext = true;
-            } 
+            }
         }
         //If dialouge has options
         else
@@ -209,9 +212,33 @@ public class DialougeManager : MonoBehaviour
         JToken statData = (JToken)npcConversations[convoName][dialougeIndex]["Option" + option + "Stat"];
         ChangePlayerStats(statData.ToObject<List<float>>());
 
-        if (Convert.ToInt32(npcConversations[convoName][dialougeIndex]["Option" + option + "Result"]) < 0)
+        if (Convert.ToInt32(npcConversations[convoName][dialougeIndex]["Option" + option + "Result"]) == -1)
         {
             //Negative = end of dialouge --> close UI, changes dialouge back to 1 (Start of every convo)
+            CloseUI();
+        }
+        else if (Convert.ToInt32(npcConversations[convoName][dialougeIndex]["Option" + option + "Result"]) == -2)
+        {
+            //Negative = end of dialouge , -2 = change scene
+            GameManager.instance.storyProgress += 1;
+            GameManager.instance.ChangeScene(GameManager.instance.storyProgress + 1);
+            CloseUI();
+        }
+        else if (Convert.ToInt32(npcConversations[convoName][dialougeIndex]["Option" + option + "Result"]) == -3)
+        {
+            //Negative = end of dialouge , -3 = change to roam scene
+            GameManager.instance.storyProgress += 1;
+            GameManager.instance.ChangeScene(4);
+            CloseUI();
+        }
+        else if (Convert.ToInt32(npcConversations[convoName][dialougeIndex]["Option" + option + "Result"]) == -4)
+        {
+            GameManager.instance.sceneProgress += 1;
+            CloseUI();
+        }
+        else if (Convert.ToInt32(npcConversations[convoName][dialougeIndex]["Option" + option + "Result"]) == -5)
+        {
+            GameManager.instance.sceneProgress += 2;
             CloseUI();
         }
         else
@@ -223,7 +250,7 @@ public class DialougeManager : MonoBehaviour
 
     private void ChangePlayerStats(List<float> stats)
     {
-        //Changes the playerstats based on each item in lists (Fixed: addiction, happiness, npc1, npc2, npcHappiness)
+        //Changes the playerstats based on each item in lists (Fixed: addiction, happiness, npc  relationship, npc happines)
         player.playerAddiction += stats[0];
         player.playerHappiness += stats[1];
 
@@ -235,6 +262,7 @@ public class DialougeManager : MonoBehaviour
     {
         dialougeIndex = 1;
         dialougeUI.gameObject.SetActive(false);
+        isFixed = false;
         Cursor.lockState = CursorLockMode.Locked;
         ai.StopTalkingToPlayer();
     }

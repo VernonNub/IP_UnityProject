@@ -16,6 +16,10 @@ public class UIManager : MonoBehaviour
 
     public GameObject UIElement;
 
+    public GameObject missionPanel;
+    public TMP_Text missionText;
+    public TMP_Text missionDescription;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -33,6 +37,20 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         UpdateStatusBars();
+        UpdateMission();
+    }
+
+    private void UpdateMission()
+    {
+        if (GameManager.instance.storyDetails[GameManager.instance.storyProgress][GameManager.instance.sceneProgress -1] == null || GameManager.instance.missionDetails[GameManager.instance.storyDetails[GameManager.instance.storyProgress][GameManager.instance.sceneProgress - 1]] == null)
+        {
+            missionPanel.SetActive(false);
+        }
+        else
+        {
+            missionText.text = GameManager.instance.storyDetails[GameManager.instance.storyProgress][GameManager.instance.sceneProgress - 1];
+            missionDescription.text = GameManager.instance.missionDetails[GameManager.instance.storyDetails[GameManager.instance.storyProgress][GameManager.instance.sceneProgress - 1]];
+        }
     }
 
     private void UpdateStatusBars()

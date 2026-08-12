@@ -9,14 +9,15 @@ public class InteractibleManager : MonoBehaviour
     public string interactibleName;
     public string requiredItem = "";
 
+    public int vapeLocation;
+
     public enum InteractType
     {
         NPC,
         Door,
         Collect,
         Windows,
-        Vape,
-        HideItem,
+        HideVape,
         
     }
 
@@ -26,13 +27,13 @@ public class InteractibleManager : MonoBehaviour
     {
         if (requiredItem == "" || playerManager.inventory.Contains(requiredItem))
         {
-            switch(interactType)
+            switch (interactType)
             {
                 case InteractType.Collect:
                     playerManager.inventory.Add(name);
                     Destroy(gameObject);
                     break;
-                
+
                 case InteractType.NPC:
                     AIManager manager = gameObject.GetComponent<AIManager>();
                     manager.playerManager = playerManager;
@@ -42,6 +43,23 @@ public class InteractibleManager : MonoBehaviour
 
                     DialougeManager.instance.speaker = interactibleName;
                     DialougeManager.instance.RunConversation();
+                    break;
+
+                case InteractType.HideVape:
+                    //Check the vape position if its out in the open
+                    if (vapeLocation % 2 == 0)
+                    {
+                        //Run SC sees dialouge
+                        DialougeManager.instance.convoName = "431ConversationWei Jie";
+                        DialougeManager.instance.isFixed = true;
+                    }
+                    else
+                    {
+                        //Run VP sees dialouge
+                        DialougeManager.instance.convoName = "432ConversationWei Jie";
+                        DialougeManager.instance.isFixed = true;
+                    }
+
                     break;
             }
         }
