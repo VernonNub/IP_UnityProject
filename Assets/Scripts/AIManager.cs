@@ -10,11 +10,7 @@ public class AIManager : MonoBehaviour
 
     [Header("AI Details")]
     public List<Transform> navigationPoints = new List<Transform>();
-    public Dictionary<Vector3, string> aiAction = new Dictionary<Vector3, string>()
-    {
-        //Keep your Y axis 0 for everything
-        {new Vector3(4.77f,0f,-14.52f), "Talking"}
-    };
+
     [SerializeField] NavMeshAgent aiAgent;
     [SerializeField] Transform targetDestination;
 
