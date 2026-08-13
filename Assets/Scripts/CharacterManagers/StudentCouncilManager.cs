@@ -34,8 +34,6 @@ public class StudentCouncilManager : AIManager
 
         ActionFinished();
 
-        UpdateGameManager();
-
         //Checks changeState flag --> changes state if its true (Meaning AI can change action)
         if (changeState)
         {
@@ -43,17 +41,12 @@ public class StudentCouncilManager : AIManager
         }
     }
 
-    private void UpdateGameManager()
-    {
-        GameManager.instance.NPC2Happiness = happiness;
-        GameManager.instance.NPC2Relationship = relationship;
-    }
-
     private void ChangeState()
     {
         Vector3 position = gameObject.transform.position;
         position.y = 0;
 
+<<<<<<< Updated upstream
         if (!actionPerformed && aiAction.ContainsKey(position))
         {
             RunAiAction((AiStates)Enum.Parse(typeof(AiStates), aiAction[position]));
@@ -61,6 +54,18 @@ public class StudentCouncilManager : AIManager
         else
         {
             RunAiAction(AiStates.Moving);
+=======
+        if (aiAction.ContainsKey(GameManager.instance.storyProgress))
+        {
+            if (!actionPerformed && aiAction[GameManager.instance.storyProgress].ContainsKey(position))
+            {
+                RunAiAction((AiStates)Enum.Parse(typeof(AiStates), aiAction[GameManager.instance.storyProgress][position]));
+            }
+            else
+            {
+                RunAiAction(AiStates.Moving);
+            }
+>>>>>>> Stashed changes
         }
     }
 

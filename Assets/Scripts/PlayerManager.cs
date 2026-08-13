@@ -108,6 +108,8 @@ public class PlayerManager : MonoBehaviour
         gameObject.transform.position = GameObject.Find("CheckPoint").transform.position;
         cc.enabled = true;
 
+        GameManager.instance.transform.position = GameObject.Find("CheckPoint").transform.position;
+
         playerAddiction = 0;
     }
 }
