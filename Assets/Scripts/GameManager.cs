@@ -38,6 +38,11 @@ public class GameManager : MonoBehaviour
     public int storyProgress = 0;
     public int sceneProgress = 1;
 
+    public AudioSource bgm;
+    public AudioClip normalBGM;
+    public AudioClip alarmBGM;
+    public AudioClip rainBGM;
+
     public Dictionary<int, List<string>> storyDetails = new Dictionary<int, List<string>>()
     {
         {0, new List<string>(){"Walk Around", "Talk to the NPC", "Look For A Spot To Vape" } }, //Tutorial
@@ -58,7 +63,7 @@ public class GameManager : MonoBehaviour
         {"Talk to the NPC", "Core gameplay of our game is interacting with NPCs, try talking to one!"},
         {"Look For A Spot To Vape", "During the game, your sanity could drain, when its fully drained your health starts to drain. To bring your sanity back, step into a vaping zone! They are green!"},
         {"Go for recess", "Its recess! Your friends Nigel and Wei Jie are asking to go for recess together. Who will you picK?"},
-        {"Talk to Nigel and Wei Jie", "You got some free time, go talk to your friends and find out whats going on."},
+        {"Talk to Nigel and Wei Jie", "You got some free time, go talk to your friends and find out whats going on. Maybe you could go back to class??"},
         {"Check up on Nigel", "Why is Nigel coughing? Let me go to the toilet to check up on him!"},
         {"!!! Hide the VAPE!", "The fire alarm rang? They are going to catch us! QUICK hide the vape before anyone sees us."},
         {"A crazy request!", "Nigel just asked you to steal some of the money from the donation jar. Will you do it?"},
@@ -76,11 +81,18 @@ public class GameManager : MonoBehaviour
 
     private string sceneName = "MainMenu";
 
+    private bool canPlay = true;
+
     private void Update()
     {
         if(storyProgress == 0 && sceneProgress == 3)
         {
             playerManager.playerAddiction = 50;
+        }
+
+        if(canPlay)
+        {
+            HandleBGM();
         }
     }
 
@@ -95,12 +107,17 @@ public class GameManager : MonoBehaviour
             instance = this;
         }
 
+        bgm = gameObject.GetComponent<AudioSource>();
+
         DontDestroyOnLoad(gameObject);
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     public void ChangeScene(int index)
     {
+        UIManager.instance.GUI.SetActive(false);
+        UIManager.instance.loadingText.SetActive(true);
+
         currentScene = index;
         SceneManager.LoadScene(scenes[index]);
 
@@ -115,17 +132,6 @@ public class GameManager : MonoBehaviour
 
             //Gets the different component after entering game scenes
             sceneName = scene.name;
-            if(GameObject.Find("Nigel").GetComponent<VapingStudentManager>() != null)
-            {
-                GameObject.Find("Nigel").GetComponent<VapingStudentManager>().relationship = NPC1Relationship;
-                GameObject.Find("Nigel").GetComponent<VapingStudentManager>().happiness = NPC1Happiness;
-            }
-
-            if (weijie.GetComponent<StudentCouncilManager>() != null)
-            {
-                weijie.GetComponent<StudentCouncilManager>().relationship = NPC1Relationship;
-                weijie.GetComponent<StudentCouncilManager>().happiness = NPC1Happiness;
-            }
 
             if(GameObject.Find("CheckPoint") != null)
             {
@@ -140,6 +146,28 @@ public class GameManager : MonoBehaviour
             {
                 weijie.SetActive(false);
             }
+        }
+
+        UIManager.instance.loadingText.SetActive(false);
+        canPlay = true;
+    }
+
+    private void HandleBGM()
+    {
+        canPlay = false;
+        if (storyProgress >= 7)
+        {
+            bgm.clip = rainBGM;
+            bgm.volume = 0.017f;
+
+            bgm.Play();
+        }
+        else
+        {
+            bgm.clip = normalBGM;
+            bgm.volume = 0.05f;
+
+            bgm.Play();
         }
     }
 

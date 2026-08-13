@@ -19,12 +19,11 @@ public class StudentCouncilManager : AIManager
     //Add your
     public Dictionary<int, Dictionary<Vector3, string>> aiAction = new Dictionary<int, Dictionary<Vector3, string>>()
     {
-        //int key is the scene just make it same as GameManager storydetails.
-        //Keep your Y axis 0 for everything
         {0, new Dictionary<Vector3, string>()
             {
-                
-            }
+                //Example
+                {new Vector3(4.77f,0f,-14.52f), "Talking"},
+            } 
         },
     };
 
@@ -37,8 +36,6 @@ public class StudentCouncilManager : AIManager
 
         ActionFinished();
 
-        UpdateGameManager();
-
         //Checks changeState flag --> changes state if its true (Meaning AI can change action)
         if (changeState)
         {
@@ -46,24 +43,21 @@ public class StudentCouncilManager : AIManager
         }
     }
 
-    private void UpdateGameManager()
-    {
-        GameManager.instance.NPC2Happiness = happiness;
-        GameManager.instance.NPC2Relationship = relationship;
-    }
-
     private void ChangeState()
     {
         Vector3 position = gameObject.transform.position;
         position.y = 0;
 
-        if (!actionPerformed && aiAction[GameManager.instance.storyProgress].ContainsKey(position))
+        if (aiAction.ContainsKey(GameManager.instance.storyProgress))
         {
-            RunAiAction((AiStates)Enum.Parse(typeof(AiStates), aiAction[GameManager.instance.storyProgress][position]));
-        }
-        else
-        {
-            RunAiAction(AiStates.Moving);
+            if (!actionPerformed && aiAction[GameManager.instance.storyProgress].ContainsKey(position))
+            {
+                RunAiAction((AiStates)Enum.Parse(typeof(AiStates), aiAction[GameManager.instance.storyProgress][position]));
+            }
+            else
+            {
+                RunAiAction(AiStates.Moving);
+            }
         }
     }
 
