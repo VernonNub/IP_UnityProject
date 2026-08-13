@@ -16,10 +16,14 @@ public class VapingStudentManager : AIManager
         Idle,
     }
 
-    public Dictionary<Vector3, string> aiAction = new Dictionary<Vector3, string>()
+    public Dictionary<int, Dictionary<Vector3, string>> aiAction = new Dictionary<int, Dictionary<Vector3, string>>()
     {
-        //Keep your Y axis 0 for everything
-        {new Vector3(4.77f,0f,-14.52f), "Thinking"}
+        {0, new Dictionary<Vector3, string>()
+            {
+                //Example
+                {new Vector3(4.77f,0f,-14.52f), "Talking"},
+            }
+        },
     };
 
     //Current AI State
@@ -43,15 +47,6 @@ public class VapingStudentManager : AIManager
         Vector3 position = gameObject.transform.position;
         position.y = 0;
 
-<<<<<<< Updated upstream
-        if (!actionPerformed && aiAction.ContainsKey(position))
-        {
-            RunAiAction((AiStates)Enum.Parse(typeof(AiStates), aiAction[position]));
-        }
-        else
-        {
-            RunAiAction(AiStates.Moving);
-=======
         if(aiAction.ContainsKey(GameManager.instance.storyProgress))
         {
             if (!actionPerformed && aiAction[GameManager.instance.storyProgress].ContainsKey(position))
@@ -62,7 +57,6 @@ public class VapingStudentManager : AIManager
             {
                 RunAiAction(AiStates.Moving);
             }
->>>>>>> Stashed changes
         }
     }
 
