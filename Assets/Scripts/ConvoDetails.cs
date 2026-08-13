@@ -10,6 +10,23 @@ public class PlaceHolderData : MonoBehaviour
         //for 111 first one is based on story progression (if your at story progression 2, then its 2)
         //Second one is based on NPC's happiness 1 if its angry (Happiness <= 25) 2 if sad (<=50) 3 if neutral (<=75) and 4 if happy (<=100)
         //Last one is relationship with player 1 if bad (<=50) 2 if good (<=100)
+        { "01ConversationNigel", new Dictionary<int, Dictionary<string, object>>()
+            {
+                //Details of each dialouge (What are the options? what are the results? How does the stat change?)
+                {1, new Dictionary<string, object>()
+                    {
+                        {"Text", "Welcome to the game!"},
+                        {"Option1", "Yay" },
+                        {"Option2", "Yippe" },
+                        {"Option1Result", -4 },
+                        {"Option2Result", -4 },
+                        {"Option1Stat", new List<float>(){0, 0, 0, 0} },
+                        {"Option2Stat", new List<float>(){0, 0, 0, 0 } }
+                    }
+                },
+            }
+        },
+
         { "11ConversationNigel", new Dictionary<int, Dictionary<string, object>>()
             {
                 //Details of each dialouge (What are the options? what are the results? How does the stat change?)
@@ -36,7 +53,7 @@ public class PlaceHolderData : MonoBehaviour
                         {"Option2Stat", new List<float>(){0, 0, 0, 0 } }
                     }
                 },
-            } 
+            }
         },
 
         { "11ConversationWei Jie", new Dictionary<int, Dictionary<string, object>>()
@@ -97,7 +114,7 @@ public class PlaceHolderData : MonoBehaviour
             }
         },
 
-        { "21ConversationNigel", new Dictionary<int, Dictionary<string, object>>()
+        { "21ConversationWei Jie", new Dictionary<int, Dictionary<string, object>>()
             {
                 //Details of each dialouge (What are the options? what are the results? How does the stat change?)
                 {1, new Dictionary<string, object>()
@@ -462,7 +479,7 @@ public class PlaceHolderData : MonoBehaviour
                     }
                 },
 
-                {4, new Dictionary<string, object>()
+                {5, new Dictionary<string, object>()
                     {
                         {"Text", "Fine..."},
                         {"Option1", "" },
@@ -475,22 +492,8 @@ public class PlaceHolderData : MonoBehaviour
                 },
             }
         },
-    };    
-}
 
-// Recess
-public class PlaceHolderData : MonoBehaviour
-{
-    public Dictionary<string, Dictionary<int, Dictionary<string, object>>> npcConversations =  new Dictionary<string, Dictionary<int, Dictionary<string, object>>>()
-    { 
-        //Each dialouge in the conversation
-        //111 determines which convo and NPC1 is the name of the NPC
-        //for 111 first one is based on story progression (if your at story progression 2, then its 2)
-        //Second one is based on NPC's happiness 1 if its angry (Happiness <= 25) 2 if sad (<=50) 3 if neutral (<=75) and 4 if happy (<=100)
-        //Last one is relationship with player 1 if bad (<=50) 2 if good (<=100)
-        //---
-        //Scene 2 free roam: aft recess
-        { "21ConversationSC", new Dictionary<int, Dictionary<string, object>>()
+        { "31ConversationWei Jie", new Dictionary<int, Dictionary<string, object>>()
             {
                 //MC talks to SC and asking MC to go back to his seat
                 {1, new Dictionary<string, object>()
@@ -504,11 +507,11 @@ public class PlaceHolderData : MonoBehaviour
                         {"Option2Stat", new List<float>(){0, 0, 0, 0 } }
                     }
                 },
-            } 
+            }
         },
 
         // Scene 4 free roam: field
-        { "41ConversationSC", new Dictionary<int, Dictionary<string, object>>()
+        { "51ConversationWei Jie", new Dictionary<int, Dictionary<string, object>>()
             {
                 //SC asks MC to stay with the class because its a fire drill
                 {1, new Dictionary<string, object>()
@@ -522,11 +525,11 @@ public class PlaceHolderData : MonoBehaviour
                         {"Option2Stat", new List<float>(){0, 0, 0, 0 } }
                     }
                 },
-            } 
+            }
         },
 
         // Scene 6 free roam: gloomy hallway
-        { "61ConversationSC", new Dictionary<int, Dictionary<string, object>>()
+        { "71ConversationWei Jie", new Dictionary<int, Dictionary<string, object>>()
             {
                 //SC is stressed out and is dissappointed.
                 {1, new Dictionary<string, object>()
@@ -540,10 +543,9 @@ public class PlaceHolderData : MonoBehaviour
                         {"Option2Stat", new List<float>(){0, 0, 0, 0 } }
                     }
                 },
-            } 
+            }
         }
-    };
+    };    
 }
-
 
 
