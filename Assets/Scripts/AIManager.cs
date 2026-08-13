@@ -22,13 +22,17 @@ public class AIManager : MonoBehaviour
     public float happiness = 50f;
     public float relationship = 50f;
 
+    private Animator aiAnimator;
+
     void OnEnable()
     {
         aiAgent = gameObject.GetComponent<NavMeshAgent>();
+        aiAnimator = gameObject.GetComponent<Animator>();
     }
 
     protected void MoveToDestination()
     {
+        aiAnimator.SetBool("IsWalking", true);
         Transform destination = navigationPoints[Random.Range(0, navigationPoints.Count)];
 
         if(destination != targetDestination)
@@ -42,12 +46,14 @@ public class AIManager : MonoBehaviour
     {
         if(aiAgent.remainingDistance == aiAgent.stoppingDistance && !isTalking)
         {
+            ResetAnimations();   
             changeState = true;
         }
     }
 
     public void TalkToPlayer()
     {
+        ResetAnimations();
         isTalking = true;
 
         //Stop Animations, stop movement
@@ -63,5 +69,10 @@ public class AIManager : MonoBehaviour
     {
         changeState = true;
         isTalking = false;
+    }
+
+    public void ResetAnimations()
+    {
+        aiAnimator.SetBool("IsWalking", false);
     }
 }
