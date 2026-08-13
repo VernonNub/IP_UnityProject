@@ -45,8 +45,8 @@ public class StudentCouncilManager : AIManager
 
     private void UpdateGameManager()
     {
-        GameManager.instance.NPC1Happiness = happiness;
-        GameManager.instance.NPC1Relationship = relationship;
+        GameManager.instance.NPC2Happiness = happiness;
+        GameManager.instance.NPC2Relationship = relationship;
     }
 
     private void ChangeState()

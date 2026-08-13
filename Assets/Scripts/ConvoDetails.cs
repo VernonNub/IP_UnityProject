@@ -10,7 +10,7 @@ public class PlaceHolderData : MonoBehaviour
         //for 111 first one is based on story progression (if your at story progression 2, then its 2)
         //Second one is based on NPC's happiness 1 if its angry (Happiness <= 25) 2 if sad (<=50) 3 if neutral (<=75) and 4 if happy (<=100)
         //Last one is relationship with player 1 if bad (<=50) 2 if good (<=100)
-        { "01ConversationNigel", new Dictionary<int, Dictionary<string, object>>()
+        { "02ConversationNigel", new Dictionary<int, Dictionary<string, object>>()
             {
                 //Details of each dialouge (What are the options? what are the results? How does the stat change?)
                 {1, new Dictionary<string, object>()
@@ -94,7 +94,7 @@ public class PlaceHolderData : MonoBehaviour
                         {"Option1", "Anything happen recently that cause you to cough?" },
                         {"Option2", "LOL must be use too much phone!" },
                         {"Option1Result", 2 },
-                        {"Option2Result", -3 },
+                        {"Option2Result", -2 },
                         {"Option1Stat", new List<float>(){0, 0, 10, 0 } },
                         {"Option2Stat", new List<float>(){0, 0, 0, 0 } }
                     }
@@ -105,8 +105,8 @@ public class PlaceHolderData : MonoBehaviour
                         {"Text", "Maybe, but I also don't know. Could be because I have been trying out this new thing recently."},
                         {"Option1", "Wah interesting, you must show me later!" },
                         {"Option2", "Hmm ok" },
-                        {"Option1Result", -3 },
-                        {"Option2Result", -3 },
+                        {"Option1Result", -2 },
+                        {"Option2Result", -2 },
                         {"Option1Stat", new List<float>(){0, 0, 0, 0 } },
                         {"Option2Stat", new List<float>(){0, 0, 0, 0 } }
                     }
@@ -123,7 +123,7 @@ public class PlaceHolderData : MonoBehaviour
                         {"Option1", "Your right, hes been quite weird recently. What is going on with him." },
                         {"Option2", "Eh your food nice anot? Mine not bad." },
                         {"Option1Result", 2 },
-                        {"Option2Result", -3 },
+                        {"Option2Result", -2 },
                         {"Option1Stat", new List<float>(){0, 0, 10, 0 } },
                         {"Option2Stat", new List<float>(){0, 0, 0, 0 } }
                     }
@@ -135,7 +135,7 @@ public class PlaceHolderData : MonoBehaviour
                         {"Option1", "" },
                         {"Option2", "" },
                         {"Option1Result", 0},
-                        {"Option2Result", -3 },
+                        {"Option2Result", -2 },
                         {"Option1Stat", new List<float>(){0, 0, 0, 0 } },
                         {"Option2Stat", new List<float>(){0, 0, 0, 0 } }
                     }
@@ -209,8 +209,8 @@ public class PlaceHolderData : MonoBehaviour
                         {"Text", "Where the 2 of you go! Fire drill and both of you sitting in toilet doing WHAT?"},
                         {"Option1", "Nothing, I just needed to go toilet." },
                         {"Option2", "Eh I thought can just stay here?" },
-                        {"Option1Result", -3 },
-                        {"Option2Result", -3 },
+                        {"Option1Result", -2 },
+                        {"Option2Result", -2 },
                         {"Option1Stat", new List<float>(){0, 0, 0, 0 } },
                         {"Option2Stat", new List<float>(){0, 0, 0, 0 } }
                     }
@@ -226,8 +226,8 @@ public class PlaceHolderData : MonoBehaviour
                         {"Text", "WHAT IS THAT. Both of you are vaping in here when you are supposed to assemble?"},
                         {"Option1", "That one not ours bro." },
                         {"Option2", "Oi please don't tell teacher." },
-                        {"Option1Result", -3 },
-                        {"Option2Result", -3 },
+                        {"Option1Result", -2 },
+                        {"Option2Result", -2 },
                         {"Option1Stat", new List<float>(){0, 0, -10, -10 } },
                         {"Option2Stat", new List<float>(){0, 0, -10, -10 } }
                     }
@@ -284,8 +284,8 @@ public class PlaceHolderData : MonoBehaviour
                         {"Text", "What are you guys doing? Aren't you supposed to be keeping the donation money safe?"},
                         {"Option1", "Ya what, I am just keeping it in my bag!" },
                         {"Option2", "Sorry sorry, I wanted to look at the money. So nice seeing such a large sum of money." },
-                        {"Option1Result", -3 },
-                        {"Option2Result", -3 },
+                        {"Option1Result", -2 },
+                        {"Option2Result", -2 },
                         {"Option1Stat", new List<float>(){0, 0, 10, 0 } },
                         {"Option2Stat", new List<float>(){0, 0, -10, 0 } }
                     }
@@ -501,8 +501,8 @@ public class PlaceHolderData : MonoBehaviour
                         {"Text", "Recess is over, you should probably go back to your seat before the teacher comes."},
                         {"Option1", "Alright, I'll go back." },
                         {"Option2", "Just looking around." },
-                        {"Option1Result", -1 },
-                        {"Option2Result", -1 },
+                        {"Option1Result", -2 },
+                        {"Option2Result", -2 },
                         {"Option1Stat", new List<float>(){0, 0, 0, 0 } },
                         {"Option2Stat", new List<float>(){0, 0, 0, 0 } }
                     }
@@ -519,8 +519,8 @@ public class PlaceHolderData : MonoBehaviour
                         {"Text", "Stay with the class, it's a fire drill!"},
                         {"Option1", "Got it. I'll stay here." },
                         {"Option2", "Okay, relax man." },
-                        {"Option1Result", -1 },
-                        {"Option2Result", -1 },
+                        {"Option1Result", -2 },
+                        {"Option2Result", -2 },
                         {"Option1Stat", new List<float>(){0, 0, 0, 0 } },
                         {"Option2Stat", new List<float>(){0, 0, 0, 0 } }
                     }
@@ -537,8 +537,8 @@ public class PlaceHolderData : MonoBehaviour
                         {"Text", "Things are such a mess right now..."},
                         {"Option1", "I know, it's overwhelming." },
                         {"Option2", "I understand how you feel." },
-                        {"Option1Result", -1 },
-                        {"Option2Result", -1 },
+                        {"Option1Result", -2 },
+                        {"Option2Result", -2 },
                         {"Option1Stat", new List<float>(){0, 0, 0, 0 } },
                         {"Option2Stat", new List<float>(){0, 0, 0, 0 } }
                     }

@@ -18,7 +18,7 @@ public class LoadingnSavingManager : MonoBehaviour
 
     private void Update()
     {
-        //Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     private void SaveData()

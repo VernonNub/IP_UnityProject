@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class EventManager : MonoBehaviour
 {
+    private bool isUsed = false;
+
     public enum Events
     {
         Vape,
@@ -14,19 +16,37 @@ public class EventManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.name == "PlayerCapsule")
+        if (!isUsed)
         {
-            switch (gameEvent)
+            if (other.gameObject.name == "PlayerCapsule")
             {
-                case Events.NextScene:
-                    GameManager.instance.storyProgress += 1;
-                    GameManager.instance.ChangeScene(GameManager.instance.sceneProgress);
-                    break;
+                switch (gameEvent)
+                {
+                    case Events.NextScene:
+                        GameManager.instance.storyProgress += 1;
+                        GameManager.instance.ChangeScene(GameManager.instance.storyProgress + 1);
+                        break;
 
-                case Events.SceneProgress:
-                    GameManager.instance.sceneProgress += 1;
-                    break;
+                    case Events.SceneProgress:
+                        GameManager.instance.sceneProgress += 1;
+                        break;
+
+                    case Events.FinalScene:
+                        if (GameManager.instance.NPC1Relationship > GameManager.instance.NPC2Relationship)
+                        {
+                            GameManager.instance.storyProgress += 1;
+                            GameManager.instance.ChangeScene(GameManager.instance.storyProgress + 1);
+                        }
+                        else
+                        {
+                            GameManager.instance.storyProgress += 2;
+                            GameManager.instance.ChangeScene(GameManager.instance.storyProgress + 1);
+                        }
+                        break;
+                }
             }
+
+            isUsed = true;
         }
     }
 

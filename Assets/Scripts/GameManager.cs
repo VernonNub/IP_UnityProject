@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
 
     public PlayerManager playerManager;
 
+    public GameObject weijie;
+
     private List<string> scenes = new List<string>()
     {
       "MainMenu",
@@ -19,9 +21,8 @@ public class GameManager : MonoBehaviour
       "Roam",
       "Toilet",
       "Roam1",
-      "Clasroom2",
+      "Classroom2",
       "Roam3",
-      "Hallway",
       "Classroom3",
       "Classroom4"
     };
@@ -55,7 +56,7 @@ public class GameManager : MonoBehaviour
     {
         {"Walk Around", "Use WASD to walk around and explore the area"},
         {"Talk to the NPC", "Core gameplay of our game is interacting with NPCs, try talking to one!"},
-        {"Look For A Spot To Vape", "During the game, your sanity could drain, when its fully drained your health starts to drain. To bring your sanity back, step into a vaping zone!"},
+        {"Look For A Spot To Vape", "During the game, your sanity could drain, when its fully drained your health starts to drain. To bring your sanity back, step into a vaping zone! They are green!"},
         {"Go for recess", "Its recess! Your friends Nigel and Wei Jie are asking to go for recess together. Who will you picK?"},
         {"Talk to Nigel and Wei Jie", "You got some free time, go talk to your friends and find out whats going on."},
         {"Check up on Nigel", "Why is Nigel coughing? Let me go to the toilet to check up on him!"},
@@ -69,7 +70,8 @@ public class GameManager : MonoBehaviour
         {"Talk to Wei Jie about Nigel", "Wei Jie wants to talk to you about Nigel."},
         {"Steal the vape", "Find Nigel's bag and steal the vape as planned!"},
         {"Talk to Nigel about his addiction", "Try to talk to Nigel and see if you can convince him to quit!"},
-        {"Talk to Wei Jie", "Wei Jie is look for you because you are missing from the fire drill."}
+        {"Talk to Wei Jie", "Wei Jie is look for you because you are missing from the fire drill."},
+        {"Talk to your friends", "You are at the canteen, talk to your friends!" }
     };
 
     private string sceneName = "MainMenu";
@@ -109,29 +111,35 @@ public class GameManager : MonoBehaviour
     {
         if (scene.name != sceneName)
         {
+            weijie = GameObject.Find("Wei Jie");
+
             //Gets the different component after entering game scenes
             sceneName = scene.name;
-            if(GameObject.Find("").GetComponent<VapingStudentManager>() != null)
+            if(GameObject.Find("Nigel").GetComponent<VapingStudentManager>() != null)
             {
                 GameObject.Find("Nigel").GetComponent<VapingStudentManager>().relationship = NPC1Relationship;
                 GameObject.Find("Nigel").GetComponent<VapingStudentManager>().happiness = NPC1Happiness;
             }
 
-            if (GameObject.Find("Wei Jie").GetComponent<StudentCouncilManager>() != null)
+            if (weijie.GetComponent<StudentCouncilManager>() != null)
             {
-                GameObject.Find("Wei Jie").GetComponent<StudentCouncilManager>().relationship = NPC1Relationship;
-                GameObject.Find("Wei Jie").GetComponent<StudentCouncilManager>().happiness = NPC1Happiness;
+                weijie.GetComponent<StudentCouncilManager>().relationship = NPC1Relationship;
+                weijie.GetComponent<StudentCouncilManager>().happiness = NPC1Happiness;
             }
 
             if(GameObject.Find("CheckPoint") != null)
             {
-                playerManager.cc.enabled = false;
-                playerManager.gameObject.transform.position = GameObject.Find("CheckPoint").transform.position;
-                playerManager.cc.enabled = true;
+                playerManager.ResetPlayer();
             }
             
+            UIManager.instance.GUI.SetActive(true);
 
             Cursor.lockState = CursorLockMode.Locked;
+
+            if(scene.name == "Toilet")
+            {
+                weijie.SetActive(false);
+            }
         }
     }
 

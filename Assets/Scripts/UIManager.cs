@@ -20,6 +20,8 @@ public class UIManager : MonoBehaviour
     public TMP_Text missionText;
     public TMP_Text missionDescription;
 
+    public GameObject GUI;
+
     private void Awake()
     {
         if (instance != null && instance != this)

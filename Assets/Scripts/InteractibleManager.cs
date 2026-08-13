@@ -51,14 +51,18 @@ public class InteractibleManager : MonoBehaviour
                     {
                         //Run SC sees dialouge
                         DialougeManager.instance.convoName = "431ConversationWei Jie";
+                        GameManager.instance.sceneProgress += 1;
                         DialougeManager.instance.isFixed = true;
                     }
                     else
                     {
                         //Run VP sees dialouge
                         DialougeManager.instance.convoName = "432ConversationWei Jie";
+                        GameManager.instance.sceneProgress += 1;
                         DialougeManager.instance.isFixed = true;
                     }
+
+                    GameManager.instance.weijie.SetActive(true);
 
                     break;
             }

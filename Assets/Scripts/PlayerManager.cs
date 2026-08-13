@@ -102,8 +102,12 @@ public class PlayerManager : MonoBehaviour
         UIManager.instance.ShowDeathPopUp();
     }
 
-    private void ResetPlayer()
+    public void ResetPlayer()
     {
-        
+        cc.enabled = false;
+        gameObject.transform.position = GameObject.Find("CheckPoint").transform.position;
+        cc.enabled = true;
+
+        playerAddiction = 0;
     }
 }
