@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8000582291676875882
 Transform:
@@ -40,6 +40,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8000582291676875882}
     m_Modifications:
+    - target: {fileID: -9186909895838474663, guid: 2071b9929fdf05740b2da39a5cd24834, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2071b9929fdf05740b2da39a5cd24834, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -83,6 +87,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2071b9929fdf05740b2da39a5cd24834, type: 3}
       propertyPath: m_Name
       value: SM_Field_Fence_Side
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2071b9929fdf05740b2da39a5cd24834, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127517346420578987, guid: 2071b9929fdf05740b2da39a5cd24834, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
