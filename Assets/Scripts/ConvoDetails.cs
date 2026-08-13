@@ -544,7 +544,59 @@ public class PlaceHolderData : MonoBehaviour
                     }
                 },
             }
-        }
+        },
+
+        { "31ConversationNigel", new Dictionary<int, Dictionary<string, object>>()
+            {
+                //MC talks to VP and he complains about recess being over
+                {1, new Dictionary<string, object>()
+                    {
+                        {"Text", "Recess over already? Do we really have to go for classes."},
+                        {"Option1", "I get you, but it's still important, you know." },
+                        {"Option2", "I know right? It's just too short..." },
+                        {"Option1Result", -1 },
+                        {"Option2Result", 1 },
+                        {"Option1Stat", new List<float>(){0, 0, 0, 0 } },
+                        {"Option2Stat", new List<float>(){0, 0, 0, 0 } }
+                    }
+                },
+            }
+        },
+
+
+        { "51ConversationNigel", new Dictionary<int, Dictionary<string, object>>()
+            {
+                //VP wants to leave early and go vape
+                {1, new Dictionary<string, object>()
+                    {
+                        {"Text", "Nothing is even happening... You wanna just leave?"},
+                        {"Option1", "Can't, we'll be caught" },
+                        {"Option2", "Sure but... How?" },
+                        {"Option1Result", -1 },
+                        {"Option2Result", 1 },
+                        {"Option1Stat", new List<float>(){0, 0, 0, 0 } },
+                        {"Option2Stat", new List<float>(){0, 0, 5, 10 } }
+                    }
+                },
+            }
+        },
+
+         { "71ConversationNigel", new Dictionary<int, Dictionary<string, object>>()
+            {
+                //VP wants to leave early and go vape
+                {1, new Dictionary<string, object>()
+                    {
+                        {"Text", "Days like this are perfect for you for you to let a little lose. C'mon, just give it a try."},
+                        {"Option1", "Not now, not now..." },
+                        {"Option2", "Yup sure, let's go." },
+                        {"Option1Result", -2 },
+                        {"Option2Result", 1 },
+                        {"Option1Stat", new List<float>(){10, 0, -10, 0 } },
+                        {"Option2Stat", new List<float>(){20, 0, 10, 10 } }
+                    }
+                },
+            }
+        },
     };    
 }
 
