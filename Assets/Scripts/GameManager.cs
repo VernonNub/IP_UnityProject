@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
 
     public Dictionary<int, List<string>> storyDetails = new Dictionary<int, List<string>>()
     {
-        {0, new List<string>(){"Walk Around", "Talk to the NPC", "Look For A Spot To Vape" } }, //Tutorial
+        {0, new List<string>(){"Walk Around", "Talk to the NPC"} }, //Tutorial
         {1, new List<string>(){"Go for recess"}}, //Starting scenes
         {2, new List<string>(){"Talk to your friends"}},
         {3, new List<string>(){"Talk to Nigel and Wei Jie"}}, //Roam

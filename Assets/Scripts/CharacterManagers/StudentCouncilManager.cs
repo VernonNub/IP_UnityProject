@@ -16,7 +16,8 @@ public class StudentCouncilManager : AIManager
         Idle
     }
 
-    //Add your
+    //Add your states here
+    // the int is just the storyprogress scene, refer to gamemanager's variable for story detail. Same int
     public Dictionary<int, Dictionary<Vector3, string>> aiAction = new Dictionary<int, Dictionary<Vector3, string>>()
     {
         {0, new Dictionary<Vector3, string>()
