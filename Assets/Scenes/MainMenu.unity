@@ -3142,7 +3142,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 611444ff314b6474a8199791b835938b, type: 3}
       propertyPath: m_Name
-      value: VapingStudent
+      value: Nigel
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 611444ff314b6474a8199791b835938b, type: 3}
       propertyPath: m_Layer
@@ -4369,7 +4369,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0e14804c825f5444ab15c7f1045c9d34, type: 3}
       propertyPath: m_Name
-      value: StudentRig 1
+      value: Wei Jie
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0e14804c825f5444ab15c7f1045c9d34, type: 3}
       propertyPath: m_Layer

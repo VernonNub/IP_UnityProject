@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using Unity.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,11 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    [Header("GameInfos")]
-    public Dictionary<string, string> items = new Dictionary<string, string>()
-    {
-        {"Vape", "What is this interesting device? I hear it can make cool smoke out of it! *Increases your happiness by 5 for 1min and increases your addiction by 5"},
-    };
+    public PlayerManager playerManager;
 
     private List<string> scenes = new List<string>()
     {
@@ -23,7 +20,7 @@ public class GameManager : MonoBehaviour
       "Toilet",
       "Roam1",
       "Clasroom2",
-      "Roam 3",
+      "Roam3",
       "Hallway",
       "Classroom3",
       "Classroom4"
@@ -75,6 +72,16 @@ public class GameManager : MonoBehaviour
         {"Talk to Wei Jie", "Wei Jie is look for you because you are missing from the fire drill."}
     };
 
+    private string sceneName = "MainMenu";
+
+    private void Update()
+    {
+        if(storyProgress == 0 && sceneProgress == 3)
+        {
+            playerManager.playerAddiction = 50;
+        }
+    }
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -87,6 +94,7 @@ public class GameManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     public void ChangeScene(int index)
@@ -96,4 +104,35 @@ public class GameManager : MonoBehaviour
 
         sceneProgress = 1;
     }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name != sceneName)
+        {
+            //Gets the different component after entering game scenes
+            sceneName = scene.name;
+            if(GameObject.Find("").GetComponent<VapingStudentManager>() != null)
+            {
+                GameObject.Find("Nigel").GetComponent<VapingStudentManager>().relationship = NPC1Relationship;
+                GameObject.Find("Nigel").GetComponent<VapingStudentManager>().happiness = NPC1Happiness;
+            }
+
+            if (GameObject.Find("Wei Jie").GetComponent<StudentCouncilManager>() != null)
+            {
+                GameObject.Find("Wei Jie").GetComponent<StudentCouncilManager>().relationship = NPC1Relationship;
+                GameObject.Find("Wei Jie").GetComponent<StudentCouncilManager>().happiness = NPC1Happiness;
+            }
+
+            if(GameObject.Find("CheckPoint") != null)
+            {
+                playerManager.cc.enabled = false;
+                playerManager.gameObject.transform.position = GameObject.Find("CheckPoint").transform.position;
+                playerManager.cc.enabled = true;
+            }
+            
+
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+    }
+
 }

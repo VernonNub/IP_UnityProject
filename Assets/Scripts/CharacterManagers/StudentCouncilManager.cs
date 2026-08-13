@@ -32,6 +32,8 @@ public class StudentCouncilManager : AIManager
     {
         CheckState();
 
+        ActionFinished();
+
         UpdateGameManager();
 
         //Checks changeState flag --> changes state if its true (Meaning AI can change action)
@@ -76,20 +78,17 @@ public class StudentCouncilManager : AIManager
                 MoveToDestination();
                 break;
             case AiStates.Talking:
+                aiAnimator.SetTrigger("Talk");
                 changeState = false;
                 break;
             case AiStates.Scolding:
+                aiAnimator.SetTrigger("Scold");
                 changeState = false;
                 break;
             case AiStates.Idle:
+                aiAnimator.SetTrigger("Idle");
                 changeState = false;
                 break;
         }
-    }
-
-    //Add this to your animation event ("Turn flag on when your animation is done")
-    public void ActionFinished()
-    {
-        actionPerformed = true;
     }
 }

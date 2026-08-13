@@ -12,8 +12,8 @@ public class LoadingnSavingManager : MonoBehaviour
     private void Start()
     {
         
-        //DialougeManager.instance.npcConversations = LoadData();
-        SaveData();
+        DialougeManager.instance.npcConversations = LoadData();
+        //SaveData();
     }
 
     private void Update()

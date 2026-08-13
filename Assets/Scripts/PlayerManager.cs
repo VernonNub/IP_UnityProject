@@ -22,7 +22,7 @@ public class PlayerManager : MonoBehaviour
     [Header("Components")]
     [SerializeField] Camera playerCamera;
     [SerializeField] GameObject playerFollowCamera;
-    private CharacterController cc;
+    public CharacterController cc;
     public GameObject checkPoint;
 
     [SerializeField] InteractibleManager interactibleManager;
