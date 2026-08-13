@@ -485,7 +485,7 @@
       "Option1": "",
       "Option2": "",
       "Option1Result": 0,
-      "Option2Result": 0,
+      "Option2Result": -2,
       "Option1Stat": [
         0.0,
         0.0,
@@ -680,8 +680,8 @@
       "Text": "Recess is over, you should probably go back to your seat before the teacher comes.",
       "Option1": "Alright, I'll go back.",
       "Option2": "Just looking around.",
-      "Option1Result": -2,
-      "Option2Result": -2,
+      "Option1Result": -1,
+      "Option2Result": -1,
       "Option1Stat": [
         0.0,
         0.0,
@@ -701,8 +701,8 @@
       "Text": "Stay with the class, it's a fire drill!",
       "Option1": "Got it. I'll stay here.",
       "Option2": "Okay, relax man.",
-      "Option1Result": -2,
-      "Option2Result": -2,
+      "Option1Result": -1,
+      "Option2Result": -1,
       "Option1Stat": [
         0.0,
         0.0,
@@ -722,8 +722,8 @@
       "Text": "Things are such a mess right now...",
       "Option1": "I know, it's overwhelming.",
       "Option2": "I understand how you feel.",
-      "Option1Result": -2,
-      "Option2Result": -2,
+      "Option1Result": -1,
+      "Option2Result": -1,
       "Option1Stat": [
         0.0,
         0.0,

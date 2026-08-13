@@ -12,8 +12,8 @@ public class LoadingnSavingManager : MonoBehaviour
     private void Start()
     {
         
-        DialougeManager.instance.npcConversations = LoadData();
-        //SaveData();
+        //DialougeManager.instance.npcConversations = LoadData();
+        SaveData();
     }
 
     private void Update()
@@ -37,6 +37,7 @@ public class LoadingnSavingManager : MonoBehaviour
             {
                 using (StreamWriter write = new StreamWriter(stream))
                 {
+                    Debug.Log("saving");
                     write.Write(dataToStore);
                 }
             }

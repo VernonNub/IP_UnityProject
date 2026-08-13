@@ -48,7 +48,7 @@ public class PlaceHolderData : MonoBehaviour
                         {"Option1", "" },
                         {"Option2", "" },
                         {"Option1Result", 0 },
-                        {"Option2Result", -1 },
+                        {"Option2Result", -2 },
                         {"Option1Stat", new List<float>(){0, 0, 0, 0 } },
                         {"Option2Stat", new List<float>(){0, 0, 0, 0 } }
                     }
@@ -77,7 +77,7 @@ public class PlaceHolderData : MonoBehaviour
                         {"Option1", "" },
                         {"Option2", "" },
                         {"Option1Result", 0 },
-                        {"Option2Result", -1 },
+                        {"Option2Result", -2 },
                         {"Option1Stat", new List<float>(){0, 0, 0, 0 } },
                         {"Option2Stat", new List<float>(){0, 0, 0, 0 } }
                     }
@@ -121,7 +121,7 @@ public class PlaceHolderData : MonoBehaviour
                     {
                         {"Text", "You know Nigel he has been acting weird recently. I knew he was always a weird person and did not like him."},
                         {"Option1", "Your right, hes been quite weird recently. What is going on with him." },
-                        {"Option2", "Eh your food nice anot? Mine not bad." },
+                        {"Option2", "Eh you want go buy food?" },
                         {"Option1Result", 2 },
                         {"Option2Result", -2 },
                         {"Option1Stat", new List<float>(){0, 0, 10, 0 } },
@@ -367,7 +367,7 @@ public class PlaceHolderData : MonoBehaviour
                         {"Option1", "" },
                         {"Option2", "" },
                         {"Option1Result", 0 },
-                        {"Option2Result", 0 },
+                        {"Option2Result", -2 },
                         {"Option1Stat", new List<float>(){0, 0, 0, 0 } },
                         {"Option2Stat", new List<float>(){0, 0, 0, 0 } }
                     }
@@ -501,8 +501,8 @@ public class PlaceHolderData : MonoBehaviour
                         {"Text", "Recess is over, you should probably go back to your seat before the teacher comes."},
                         {"Option1", "Alright, I'll go back." },
                         {"Option2", "Just looking around." },
-                        {"Option1Result", -2 },
-                        {"Option2Result", -2 },
+                        {"Option1Result", -1 },
+                        {"Option2Result", -1 },
                         {"Option1Stat", new List<float>(){0, 0, 0, 0 } },
                         {"Option2Stat", new List<float>(){0, 0, 0, 0 } }
                     }
@@ -519,8 +519,8 @@ public class PlaceHolderData : MonoBehaviour
                         {"Text", "Stay with the class, it's a fire drill!"},
                         {"Option1", "Got it. I'll stay here." },
                         {"Option2", "Okay, relax man." },
-                        {"Option1Result", -2 },
-                        {"Option2Result", -2 },
+                        {"Option1Result", -1 },
+                        {"Option2Result", -1 },
                         {"Option1Stat", new List<float>(){0, 0, 0, 0 } },
                         {"Option2Stat", new List<float>(){0, 0, 0, 0 } }
                     }
@@ -537,8 +537,8 @@ public class PlaceHolderData : MonoBehaviour
                         {"Text", "Things are such a mess right now..."},
                         {"Option1", "I know, it's overwhelming." },
                         {"Option2", "I understand how you feel." },
-                        {"Option1Result", -2 },
-                        {"Option2Result", -2 },
+                        {"Option1Result", -1 },
+                        {"Option2Result", -1 },
                         {"Option1Stat", new List<float>(){0, 0, 0, 0 } },
                         {"Option2Stat", new List<float>(){0, 0, 0, 0 } }
                     }
