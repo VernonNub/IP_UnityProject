@@ -737,5 +737,68 @@
         0.0
       ]
     }
+  },
+  "31ConversationNigel": {
+    "1": {
+      "Text": "Recess over already? Do we really have to go for classes.",
+      "Option1": "I get you, but it's still important, you know.",
+      "Option2": "I know right? It's just too short...",
+      "Option1Result": -1,
+      "Option2Result": 1,
+      "Option1Stat": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "Option2Stat": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "51ConversationNigel": {
+    "1": {
+      "Text": "Nothing is even happening... You wanna just leave?",
+      "Option1": "Can't, we'll be caught",
+      "Option2": "Sure but... How?",
+      "Option1Result": -1,
+      "Option2Result": 1,
+      "Option1Stat": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "Option2Stat": [
+        0.0,
+        0.0,
+        5.0,
+        10.0
+      ]
+    }
+  },
+  "71ConversationNigel": {
+    "1": {
+      "Text": "Days like this are perfect for you for you to let a little lose. C'mon, just give it a try.",
+      "Option1": "Not now, not now...",
+      "Option2": "Yup sure, let's go.",
+      "Option1Result": -2,
+      "Option2Result": 1,
+      "Option1Stat": [
+        10.0,
+        0.0,
+        -10.0,
+        0.0
+      ],
+      "Option2Stat": [
+        20.0,
+        0.0,
+        10.0,
+        10.0
+      ]
+    }
   }
 }

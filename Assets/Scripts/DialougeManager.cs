@@ -577,7 +577,7 @@ public class DialougeManager : MonoBehaviour
                         {"Option1", "I get you, but it's still important, you know." },
                         {"Option2", "I know right? It's just too short..." },
                         {"Option1Result", -1 },
-                        {"Option2Result", 1 },
+                        {"Option2Result", -1 },
                         {"Option1Stat", new List<float>(){0, 0, 0, 0 } },
                         {"Option2Stat", new List<float>(){0, 0, 0, 0 } }
                     }
@@ -595,7 +595,7 @@ public class DialougeManager : MonoBehaviour
                         {"Option1", "Can't, we'll be caught" },
                         {"Option2", "Sure but... How?" },
                         {"Option1Result", -1 },
-                        {"Option2Result", 1 },
+                        {"Option2Result", -1 },
                         {"Option1Stat", new List<float>(){0, 0, 0, 0 } },
                         {"Option2Stat", new List<float>(){0, 0, 5, 10 } }
                     }
@@ -611,8 +611,8 @@ public class DialougeManager : MonoBehaviour
                         {"Text", "Days like this are perfect for you for you to let a little lose. C'mon, just give it a try."},
                         {"Option1", "Not now, not now..." },
                         {"Option2", "Yup sure, let's go." },
-                        {"Option1Result", -2 },
-                        {"Option2Result", 1 },
+                        {"Option1Result", -1 },
+                        {"Option2Result", -1 },
                         {"Option1Stat", new List<float>(){10, 0, -10, 0 } },
                         {"Option2Stat", new List<float>(){20, 0, 10, 10 } }
                     }

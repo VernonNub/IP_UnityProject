@@ -9,10 +9,13 @@ public class EventManager : MonoBehaviour
         Vape,
         NextScene,
         SceneProgress,
-        FinalScene
+        FinalScene,
+        RemoveVFX
     }
 
     public Events gameEvent;
+
+    public GameObject VFX;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -42,6 +45,10 @@ public class EventManager : MonoBehaviour
                             GameManager.instance.storyProgress += 2;
                             GameManager.instance.ChangeScene(GameManager.instance.storyProgress + 1);
                         }
+                        break;
+
+                    case Events.RemoveVFX:
+                        Destroy(VFX);
                         break;
                 }
             }
