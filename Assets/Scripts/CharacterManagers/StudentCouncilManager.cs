@@ -28,11 +28,19 @@ public class StudentCouncilManager : AIManager
     {
         CheckState();
 
+        UpdateGameManager();
+
         //Checks changeState flag --> changes state if its true (Meaning AI can change action)
         if (changeState)
         {
             ChangeState();
         }
+    }
+
+    private void UpdateGameManager()
+    {
+        GameManager.instance.NPC1Happiness = happiness;
+        GameManager.instance.NPC1Relationship = relationship;
     }
 
     private void ChangeState()

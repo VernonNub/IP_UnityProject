@@ -2,15 +2,44 @@ using UnityEngine;
 
 public class EventManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public enum Events
     {
-        
+        Vape,
+        NextScene,
+        SceneProgress,
+        FinalScene
     }
 
-    // Update is called once per frame
-    void Update()
+    public Events gameEvent;
+
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if(other.gameObject.name == "PlayerCapsule")
+        {
+            switch (gameEvent)
+            {
+                case Events.NextScene:
+                    GameManager.instance.storyProgress += 1;
+                    GameManager.instance.ChangeScene(GameManager.instance.sceneProgress);
+                    break;
+
+                case Events.SceneProgress:
+                    GameManager.instance.sceneProgress += 1;
+                    break;
+            }
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.gameObject.name == "PlayerCapsule")
+        {
+            switch (gameEvent)
+            {
+                case Events.Vape:
+                    other.gameObject.GetComponent<PlayerManager>().playerSanity += 10 * Time.deltaTime;
+                    break;
+            }
+        }
     }
 }

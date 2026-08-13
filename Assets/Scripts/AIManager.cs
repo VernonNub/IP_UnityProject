@@ -22,7 +22,7 @@ public class AIManager : MonoBehaviour
     public float happiness = 50f;
     public float relationship = 50f;
 
-    private Animator aiAnimator;
+    protected Animator aiAnimator;
 
     void OnEnable()
     {
@@ -74,5 +74,13 @@ public class AIManager : MonoBehaviour
     public void ResetAnimations()
     {
         aiAnimator.SetBool("IsWalking", false);
+    }
+
+    public void ActionFinished()
+    {
+        if(aiAnimator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+        {
+            actionPerformed = true;
+        }
     }
 }

@@ -31,6 +31,11 @@ public class GameManager : MonoBehaviour
 
     public int currentScene = 0;
 
+    public float NPC1Happiness = 0;
+    public float NPC1Relationship = 0;
+    public float NPC2Happiness = 0;
+    public float NPC2Relationship = 0;
+
     [Header("Story Progression")]
     public int storyProgress = 0;
     public int sceneProgress = 1;
@@ -46,7 +51,7 @@ public class GameManager : MonoBehaviour
         {6, new List<string>(){"A crazy request!", "Oh no Wei Jie found out!", "Who do I choose?"}}, //Money Stealing
         {7, new List<string>(){"Talk to Nigel and Wei Jie"}}, //Roam 3
         {8, new List<string>(){"Talk to Nigel", "Its so addicting!", "YOU DON'T WANT TO VAPE?"}}, //Ending Pt 1 No 1 (VP relationship higher)
-        {9, new List<string>(){"Talk to Wei Jie", "Steal the vape", "Talk to Nigel about his addiction"}}, //Ending Pt1 No 2 (SC relationship higher)
+        {9, new List<string>(){"Talk to Wei Jie about Nigel", "Steal the vape", "Talk to Nigel about his addiction"}}, //Ending Pt1 No 2 (SC relationship higher)
     };
 
     public Dictionary<string, string> missionDetails = new Dictionary<string, string>()
@@ -64,7 +69,7 @@ public class GameManager : MonoBehaviour
         {"Talk to Nigel", "I want to try the vape that Nigel has been using!"},
         {"Its so addicting!", "I can't stop using the VAPE, I need to keep vaping."},
         {"YOU DON'T WANT TO VAPE?", "Run away from Nigel, he wants to fight you!"},
-        {"Talk to Wei Jie", "Wei Jie wants to talk to you about Nigel."},
+        {"Talk to Wei Jie about Nigel", "Wei Jie wants to talk to you about Nigel."},
         {"Steal the vape", "Find Nigel's bag and steal the vape as planned!"},
         {"Talk to Nigel about his addiction", "Try to talk to Nigel and see if you can convince him to quit!"},
         {"Talk to Wei Jie", "Wei Jie is look for you because you are missing from the fire drill."}
