@@ -16,11 +16,10 @@ public class VapingStudentManager : AIManager
         Idle,
     }
 
-    //Add your
     public Dictionary<Vector3, string> aiAction = new Dictionary<Vector3, string>()
     {
         //Keep your Y axis 0 for everything
-        
+        {new Vector3(4.77f,0f,-14.52f), "Thinking"}
     };
 
     //Current AI State
@@ -74,6 +73,26 @@ public class VapingStudentManager : AIManager
                 actionPerformed = false;
                 changeState = false;
                 MoveToDestination();
+                break;
+
+            case AiStates.Thinking:
+                aiAnimator.SetTrigger("Thinking");
+                changeState = false;
+                break;
+
+            case AiStates.Yelling:
+                aiAnimator.SetTrigger("Yell");
+                changeState = false;
+                break;
+
+            case AiStates.Talking:
+                aiAnimator.SetTrigger("Talk");
+                changeState = false;
+                break;
+
+            case AiStates.Idle:
+                aiAnimator.SetTrigger("Idle");
+                changeState = false;
                 break;
         }
     }
