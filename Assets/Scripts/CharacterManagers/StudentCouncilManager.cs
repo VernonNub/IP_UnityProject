@@ -17,12 +17,15 @@ public class StudentCouncilManager : AIManager
     }
 
     //Add your
-    public Dictionary<Vector3, string> aiAction = new Dictionary<Vector3, string>()
+    public Dictionary<int, Dictionary<Vector3, string>> aiAction = new Dictionary<int, Dictionary<Vector3, string>>()
     {
+        //int key is the scene just make it same as GameManager storydetails.
         //Keep your Y axis 0 for everything
-        {new Vector3(4.77f,0f,-14.52f), "Talking"},
-        {new Vector3(10.23f,0f,-5.67f), "Scolding"},
-        {new Vector3(0f,0f,0f), "Idle"}
+        {0, new Dictionary<Vector3, string>()
+            {
+                
+            }
+        },
     };
 
     //Current AI State
@@ -54,9 +57,9 @@ public class StudentCouncilManager : AIManager
         Vector3 position = gameObject.transform.position;
         position.y = 0;
 
-        if (!actionPerformed && aiAction.ContainsKey(position))
+        if (!actionPerformed && aiAction[GameManager.instance.storyProgress].ContainsKey(position))
         {
-            RunAiAction((AiStates)Enum.Parse(typeof(AiStates), aiAction[position]));
+            RunAiAction((AiStates)Enum.Parse(typeof(AiStates), aiAction[GameManager.instance.storyProgress][position]));
         }
         else
         {
