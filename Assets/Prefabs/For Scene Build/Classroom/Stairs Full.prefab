@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5610544085823476215
 Transform:
@@ -45,7 +45,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7302039466499293637
 Transform:
@@ -86,7 +86,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5312005135861807491
 Transform:
@@ -117,7 +117,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3289929336955228966
 Transform:
@@ -167,7 +167,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3156699363396088596
 Transform:
@@ -204,7 +204,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7424593649162528680
 Transform:
@@ -241,7 +241,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &60168490506647700
 Transform:
@@ -278,7 +278,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5345011946572090070
 Transform:
@@ -315,7 +315,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7203698150625863749
 Transform:
@@ -390,9 +390,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1525761942272411059, guid: 7461e282d9482c44daf86760fb645272, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -816301788321891938, guid: 7461e282d9482c44daf86760fb645272, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7461e282d9482c44daf86760fb645272, type: 3}
       propertyPath: m_Name
       value: wall next to stairs smaller
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7461e282d9482c44daf86760fb645272, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8523772855540137367, guid: 7461e282d9482c44daf86760fb645272, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -515,9 +531,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7299731861177643147, guid: 23aa8afcfef525349bd1e27e25f5bbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 23aa8afcfef525349bd1e27e25f5bbd5, type: 3}
       propertyPath: m_Name
       value: stairs wall smaller flat
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 23aa8afcfef525349bd1e27e25f5bbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -577,9 +601,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8574202367413383205, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -5539764629200458662, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -1132463520030292120, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
       propertyPath: m_Name
       value: wall next to stairs
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5997474064671181656, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -639,9 +683,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1220538804499025271, guid: fc539418d955e2b4ca14e70aeef1589e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fc539418d955e2b4ca14e70aeef1589e, type: 3}
       propertyPath: m_Name
       value: stairs floor (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fc539418d955e2b4ca14e70aeef1589e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -701,9 +753,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1525761942272411059, guid: 7461e282d9482c44daf86760fb645272, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -816301788321891938, guid: 7461e282d9482c44daf86760fb645272, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7461e282d9482c44daf86760fb645272, type: 3}
       propertyPath: m_Name
       value: wall next to stairs smaller (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7461e282d9482c44daf86760fb645272, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8523772855540137367, guid: 7461e282d9482c44daf86760fb645272, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -764,9 +832,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5539764629200458662, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -1132463520030292120, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
       propertyPath: m_Name
       value: wall next to stairs (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5997474064671181656, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -827,9 +911,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8574202367413383205, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -5539764629200458662, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -1132463520030292120, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
       propertyPath: m_Name
       value: wall next to stairs (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5997474064671181656, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -889,9 +993,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7299731861177643147, guid: 23aa8afcfef525349bd1e27e25f5bbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 23aa8afcfef525349bd1e27e25f5bbd5, type: 3}
       propertyPath: m_Name
       value: stairs wall smaller flat (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 23aa8afcfef525349bd1e27e25f5bbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -951,9 +1063,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8574202367413383205, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -5539764629200458662, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -1132463520030292120, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
       propertyPath: m_Name
       value: wall next to stairs (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5997474064671181656, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -973,6 +1105,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3156699363396088596}
     m_Modifications:
+    - target: {fileID: -8881372342676273966, guid: 7461e282d9482c44daf86760fb645272, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7461e282d9482c44daf86760fb645272, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1013,9 +1149,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1525761942272411059, guid: 7461e282d9482c44daf86760fb645272, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -816301788321891938, guid: 7461e282d9482c44daf86760fb645272, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7461e282d9482c44daf86760fb645272, type: 3}
       propertyPath: m_Name
       value: wall next to stairs smaller (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7461e282d9482c44daf86760fb645272, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8523772855540137367, guid: 7461e282d9482c44daf86760fb645272, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1083,6 +1235,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stairs_Connect_To_Corridor_Wall (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 57b524915751d4d40aedc49bee241940, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7563312914117111447, guid: 57b524915751d4d40aedc49bee241940, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1141,9 +1301,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1220538804499025271, guid: fc539418d955e2b4ca14e70aeef1589e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fc539418d955e2b4ca14e70aeef1589e, type: 3}
       propertyPath: m_Name
       value: stairs floor (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fc539418d955e2b4ca14e70aeef1589e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1203,9 +1371,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5539764629200458662, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -1132463520030292120, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
       propertyPath: m_Name
       value: wall next to stairs
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5997474064671181656, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -1270,6 +1454,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Corridor_StraightCeiling
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8b571e3ec24658d4ebfcd956b4532132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1328,9 +1516,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7299731861177643147, guid: 23aa8afcfef525349bd1e27e25f5bbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 23aa8afcfef525349bd1e27e25f5bbd5, type: 3}
       propertyPath: m_Name
       value: stairs wall smaller flat
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 23aa8afcfef525349bd1e27e25f5bbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1390,9 +1586,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5539764629200458662, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -1132463520030292120, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
       propertyPath: m_Name
       value: wall next to stairs (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5997474064671181656, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -1469,6 +1681,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Corridor_Wall_A
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: adabfd69720a558489dfb1b373413f0b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1527,9 +1743,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8574202367413383205, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -5539764629200458662, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -1132463520030292120, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
       propertyPath: m_Name
       value: wall next to stairs (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5997474064671181656, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1671,6 +1907,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Corridor_StraightCeiling (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8b571e3ec24658d4ebfcd956b4532132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1733,6 +1973,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Corridor_StraightCeiling (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8b571e3ec24658d4ebfcd956b4532132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1791,9 +2035,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5539764629200458662, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -1132463520030292120, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
       propertyPath: m_Name
       value: wall next to stairs (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5997474064671181656, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -1924,6 +2184,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stairs_Connect_To_Corridor_Wall (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 57b524915751d4d40aedc49bee241940, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7563312914117111447, guid: 57b524915751d4d40aedc49bee241940, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1982,9 +2250,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1525761942272411059, guid: 7461e282d9482c44daf86760fb645272, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -816301788321891938, guid: 7461e282d9482c44daf86760fb645272, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7461e282d9482c44daf86760fb645272, type: 3}
       propertyPath: m_Name
       value: wall next to stairs smaller
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7461e282d9482c44daf86760fb645272, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8523772855540137367, guid: 7461e282d9482c44daf86760fb645272, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -2045,9 +2329,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5539764629200458662, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -1132463520030292120, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
       propertyPath: m_Name
       value: wall next to stairs (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5997474064671181656, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -2108,9 +2408,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1220538804499025271, guid: fc539418d955e2b4ca14e70aeef1589e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fc539418d955e2b4ca14e70aeef1589e, type: 3}
       propertyPath: m_Name
       value: stairs floor (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fc539418d955e2b4ca14e70aeef1589e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2195,6 +2503,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3156699363396088596}
     m_Modifications:
+    - target: {fileID: -8881372342676273966, guid: 7461e282d9482c44daf86760fb645272, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7461e282d9482c44daf86760fb645272, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.2732086
@@ -2235,9 +2547,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1525761942272411059, guid: 7461e282d9482c44daf86760fb645272, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -816301788321891938, guid: 7461e282d9482c44daf86760fb645272, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7461e282d9482c44daf86760fb645272, type: 3}
       propertyPath: m_Name
       value: wall next to stairs smaller
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7461e282d9482c44daf86760fb645272, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8523772855540137367, guid: 7461e282d9482c44daf86760fb645272, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2304,6 +2632,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8b571e3ec24658d4ebfcd956b4532132, type: 3}
       propertyPath: m_Name
       value: SM_Corridor_StraightCeiling (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8b571e3ec24658d4ebfcd956b4532132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2379,6 +2711,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Corridor_Wall_A (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: adabfd69720a558489dfb1b373413f0b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2437,9 +2773,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5539764629200458662, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -1132463520030292120, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
       propertyPath: m_Name
       value: wall next to stairs
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5997474064671181656, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -2500,9 +2852,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7299731861177643147, guid: 23aa8afcfef525349bd1e27e25f5bbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 23aa8afcfef525349bd1e27e25f5bbd5, type: 3}
       propertyPath: m_Name
       value: stairs wall smaller flat (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 23aa8afcfef525349bd1e27e25f5bbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2562,9 +2922,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7299731861177643147, guid: 23aa8afcfef525349bd1e27e25f5bbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 23aa8afcfef525349bd1e27e25f5bbd5, type: 3}
       propertyPath: m_Name
       value: stairs wall smaller flat (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 23aa8afcfef525349bd1e27e25f5bbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2624,9 +2992,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7299731861177643147, guid: 23aa8afcfef525349bd1e27e25f5bbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 23aa8afcfef525349bd1e27e25f5bbd5, type: 3}
       propertyPath: m_Name
       value: stairs wall smaller flat (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 23aa8afcfef525349bd1e27e25f5bbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2686,9 +3062,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8574202367413383205, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -5539764629200458662, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -1132463520030292120, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
       propertyPath: m_Name
       value: wall next to stairs (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5997474064671181656, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2748,9 +3144,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1220538804499025271, guid: fc539418d955e2b4ca14e70aeef1589e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fc539418d955e2b4ca14e70aeef1589e, type: 3}
       propertyPath: m_Name
       value: stairs floor (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fc539418d955e2b4ca14e70aeef1589e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2810,9 +3214,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7299731861177643147, guid: 23aa8afcfef525349bd1e27e25f5bbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 23aa8afcfef525349bd1e27e25f5bbd5, type: 3}
       propertyPath: m_Name
       value: stairs wall smaller flat (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 23aa8afcfef525349bd1e27e25f5bbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2832,6 +3244,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5345011946572090070}
     m_Modifications:
+    - target: {fileID: -8881372342676273966, guid: 7461e282d9482c44daf86760fb645272, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7461e282d9482c44daf86760fb645272, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2872,9 +3288,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1525761942272411059, guid: 7461e282d9482c44daf86760fb645272, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -816301788321891938, guid: 7461e282d9482c44daf86760fb645272, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7461e282d9482c44daf86760fb645272, type: 3}
       propertyPath: m_Name
       value: wall next to stairs smaller (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7461e282d9482c44daf86760fb645272, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8523772855540137367, guid: 7461e282d9482c44daf86760fb645272, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2942,6 +3374,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stairs_Connect_To_Corridor_Wall (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 57b524915751d4d40aedc49bee241940, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7563312914117111447, guid: 57b524915751d4d40aedc49bee241940, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3000,9 +3440,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5539764629200458662, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -1132463520030292120, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
       propertyPath: m_Name
       value: wall next to stairs (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5997474064671181656, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -3063,9 +3519,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8574202367413383205, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -5539764629200458662, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -1132463520030292120, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
       propertyPath: m_Name
       value: wall next to stairs (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5997474064671181656, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3125,9 +3601,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8574202367413383205, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -5539764629200458662, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -1132463520030292120, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
       propertyPath: m_Name
       value: wall next to stairs (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5997474064671181656, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3195,6 +3691,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stairs_Connect_To_Corridor_Wall (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 57b524915751d4d40aedc49bee241940, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7563312914117111447, guid: 57b524915751d4d40aedc49bee241940, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3256,6 +3760,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8b571e3ec24658d4ebfcd956b4532132, type: 3}
       propertyPath: m_Name
       value: SM_Corridor_StraightCeiling (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8b571e3ec24658d4ebfcd956b4532132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3380,9 +3888,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5539764629200458662, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -1132463520030292120, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
       propertyPath: m_Name
       value: wall next to stairs (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5997474064671181656, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -3451,6 +3975,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stairs_Connect_To_Corridor_Wall (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 57b524915751d4d40aedc49bee241940, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7563312914117111447, guid: 57b524915751d4d40aedc49bee241940, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3509,9 +4041,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8574202367413383205, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -5539764629200458662, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -1132463520030292120, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
       propertyPath: m_Name
       value: wall next to stairs
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5997474064671181656, guid: 1cab2154536da7d4ab9f0d8738d1c8fa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3579,6 +4131,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stairs_Connect_To_Corridor_Wall (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 57b524915751d4d40aedc49bee241940, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7563312914117111447, guid: 57b524915751d4d40aedc49bee241940, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3637,9 +4197,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7299731861177643147, guid: 23aa8afcfef525349bd1e27e25f5bbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 23aa8afcfef525349bd1e27e25f5bbd5, type: 3}
       propertyPath: m_Name
       value: stairs wall smaller flat (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 23aa8afcfef525349bd1e27e25f5bbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3699,9 +4267,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7299731861177643147, guid: 23aa8afcfef525349bd1e27e25f5bbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 23aa8afcfef525349bd1e27e25f5bbd5, type: 3}
       propertyPath: m_Name
       value: stairs wall smaller flat (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 23aa8afcfef525349bd1e27e25f5bbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3769,6 +4345,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stairs_Connect_To_Corridor_Wall
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 57b524915751d4d40aedc49bee241940, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7563312914117111447, guid: 57b524915751d4d40aedc49bee241940, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3835,6 +4419,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Corridor_StraightCeiling (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8b571e3ec24658d4ebfcd956b4532132, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3853,6 +4441,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5345011946572090070}
     m_Modifications:
+    - target: {fileID: -8881372342676273966, guid: 7461e282d9482c44daf86760fb645272, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7461e282d9482c44daf86760fb645272, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.2732086
@@ -3893,9 +4485,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1525761942272411059, guid: 7461e282d9482c44daf86760fb645272, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -816301788321891938, guid: 7461e282d9482c44daf86760fb645272, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7461e282d9482c44daf86760fb645272, type: 3}
       propertyPath: m_Name
       value: wall next to stairs smaller
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7461e282d9482c44daf86760fb645272, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8523772855540137367, guid: 7461e282d9482c44daf86760fb645272, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3955,9 +4563,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7299731861177643147, guid: 23aa8afcfef525349bd1e27e25f5bbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 23aa8afcfef525349bd1e27e25f5bbd5, type: 3}
       propertyPath: m_Name
       value: stairs wall smaller flat (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 23aa8afcfef525349bd1e27e25f5bbd5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4025,6 +4641,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stairs_Connect_To_Corridor_Wall (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 57b524915751d4d40aedc49bee241940, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7563312914117111447, guid: 57b524915751d4d40aedc49bee241940, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4090,6 +4714,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 57b524915751d4d40aedc49bee241940, type: 3}
       propertyPath: m_Name
       value: Stairs_Connect_To_Corridor_Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 57b524915751d4d40aedc49bee241940, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7563312914117111447, guid: 57b524915751d4d40aedc49bee241940, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4157,6 +4789,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stairs_Connect_To_Corridor_Wall (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 57b524915751d4d40aedc49bee241940, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7563312914117111447, guid: 57b524915751d4d40aedc49bee241940, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4215,9 +4855,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1525761942272411059, guid: 7461e282d9482c44daf86760fb645272, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -816301788321891938, guid: 7461e282d9482c44daf86760fb645272, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7461e282d9482c44daf86760fb645272, type: 3}
       propertyPath: m_Name
       value: wall next to stairs smaller (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7461e282d9482c44daf86760fb645272, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8523772855540137367, guid: 7461e282d9482c44daf86760fb645272, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
