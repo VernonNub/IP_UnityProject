@@ -289,6 +289,7 @@ public class DialougeManager : MonoBehaviour
         isFixed = false;
         Cursor.lockState = CursorLockMode.Locked;
         ai.StopTalkingToPlayer();
+
     }
 
     private void OpenUI()

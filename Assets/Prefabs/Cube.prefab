@@ -126,5 +126,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EventManager
   isUsed: 0
-  gameEvent: 2
+  sceneRequired: 0
+  gameEvent: 1
   VFX: {fileID: 0}

@@ -29,7 +29,7 @@ public class EventManager : MonoBehaviour
                 switch (gameEvent)
                 {
                     case Events.NextScene:
-                        if(sceneRequired == 3 || sceneRequired == 5 || sceneRequired == 7)
+                        if(sceneRequired == GameManager.instance.storyProgress)
                         GameManager.instance.IncreaseProgress();
                         isUsed = true;
                         break;

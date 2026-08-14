@@ -22,7 +22,8 @@ public class VapingStudentManager : AIManager
     //Add your states here
     // the int is just the storyprogress scene, refer to gamemanager's variable for story detail. Same int
     public Dictionary<int, Dictionary<Vector3, string>> aiAction = new Dictionary<int, Dictionary<Vector3, string>>()
-    {
+    { 
+        /* causes the character to walk on the spot, i didnt write this code idk why its like that LOL
         {0, new Dictionary<Vector3, string>()
             {
                 //Example
@@ -38,7 +39,8 @@ public class VapingStudentManager : AIManager
                 {new Vector3(165.029999f,0f,86.7200012f), "Thinking"}
 
             }
-        },
+        },*/
+        
     };
 
     public Dictionary<int, List<Vector3>> aiMovement = new Dictionary<int, List<Vector3>>()
@@ -47,6 +49,9 @@ public class VapingStudentManager : AIManager
             {
                 //Example
                 {new Vector3(164.841995f,49.2851105f,84.9970016f)},
+                {new Vector3(165.61f,49.2851105f,89.8799973f)},
+                {new Vector3(162.520004f,49.2101479f,80.5500031f)}
+
             }
         },
 
@@ -54,13 +59,17 @@ public class VapingStudentManager : AIManager
             {
                 //Example
                 {new Vector3(165.809998f,49.2851105f,80.5800018f)},
+                {new Vector3(160.710007f,49.2101479f,80.6600037f)},
+                {new Vector3(162.520004f,49.2101479f,80.5500031f)},
             }
         },
 
         {2, new List<Vector3>()
             {
-                //Example
-                {new Vector3(4.77f,0f,-14.52f)},
+                
+                {new Vector3(180.89f,49.2851105f,80.5800018f)},
+                {new Vector3(112.809998f,30.1164684f,-29.6399994f)},
+                {new Vector3(95.809998f,30.1164684f,-29.6399994f)},
             }
         },
 
@@ -68,20 +77,25 @@ public class VapingStudentManager : AIManager
             {
                 //Example
                 {new Vector3(165.809998f,49.2851105f,80.5800018f)},
+                {new Vector3(166.660004f,49.2101479f,80.163002f)},
+                {new Vector3(174.742996f,49.2101479f,84.6579971f)}
             }
         },
 
         {4, new List<Vector3>()
             {
                 //Example
-                {new Vector3(4.77f,0f,-14.52f)},
+                {new Vector3(172.320007f,49.2101479f,94.7900009f)},
+                {new Vector3(175.929993f,49.2101479f,96.6399994f)}
             }
         },
 
         {5, new List<Vector3>()
             {
                 //Example
-                {new Vector3(4.77f,0f,-14.52f)},
+                {new Vector3(170.649994f,30.1329575f,-40f)},
+                {new Vector3(170.649994f,30.1329575f,-30f)},
+                 {new Vector3(130.649994f,30.1329575f,-20f)},
             }
         },
 
@@ -89,6 +103,8 @@ public class VapingStudentManager : AIManager
             {
                 //Example
                 {new Vector3(164.841995f,49.2851105f,84.9970016f)},
+                {new Vector3(165.61f,49.2851105f,89.8799973f)},
+                {new Vector3(162.520004f,49.2101479f,80.5500031f)}
             }
         },
 
@@ -96,6 +112,8 @@ public class VapingStudentManager : AIManager
             {
                 //Example
                 {new Vector3(165.809998f,49.2851105f,80.5800018f)},
+                {new Vector3(166.660004f,49.2101479f,80.163002f)},
+                {new Vector3(174.742996f,49.2101479f,84.6579971f)}
             }
         },
 
@@ -103,6 +121,8 @@ public class VapingStudentManager : AIManager
             {
                 //Example
                 {new Vector3(164.841995f,49.2851105f,84.9970016f)},
+                {new Vector3(169.61f,49.2851105f,89.8799973f)},
+                {new Vector3(162.520004f,49.2101479f,83f)}
             }
         },
 
@@ -110,6 +130,8 @@ public class VapingStudentManager : AIManager
             {
                 //Example
                 {new Vector3(164.841995f,49.2851105f,84.9970016f)},
+                {new Vector3(165.61f,49.2851105f,89.8799973f)},
+                {new Vector3(162.520004f,49.2101479f,85.5500031f)}
             }
         },
     };
@@ -178,6 +200,7 @@ public class VapingStudentManager : AIManager
         }
         else
         {
+            Debug.Log("Trying to wa;l");
             aiAnimator.SetBool("IsWalking", true);
             destination = aiMovement[GameManager.instance.storyProgress][UnityEngine.Random.Range(0, aiMovement[GameManager.instance.storyProgress].Count)];
         }

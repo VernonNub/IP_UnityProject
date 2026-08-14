@@ -40,12 +40,15 @@ public class InteractibleManager : MonoBehaviour
 
                 case InteractType.NPC:
 
+                    
                     if(gameObject.name == "Nigel")
                     {
+                        print(gameObject.name);
                         VapingStudentManager manager;
                         manager = gameObject.GetComponent<VapingStudentManager>();
                         manager.playerManager = playerManager;
                         manager.TalkToPlayer();
+                        
 
                         DialougeManager.instance.ai = manager;
 

@@ -22,6 +22,8 @@ public class StudentCouncilManager : AIManager
     // the int is just the storyprogress scene, refer to gamemanager's variable for story detail. Same int
     public Dictionary<int, Dictionary<Vector3, string>> aiAction = new Dictionary<int, Dictionary<Vector3, string>>()
     {
+
+        /* doesnt work rn
         {0, new Dictionary<Vector3, string>()
             {
                 //Example
@@ -38,6 +40,13 @@ public class StudentCouncilManager : AIManager
 
             }
         },
+
+        {3, new Dictionary<Vector3, string>() 
+            {
+                {new Vector3(123.410004f,0f,-24.8999996f), "Thinking"},
+                
+            }
+        },*/
     };
 
     public Dictionary<int, List<Vector3>> aiMovement = new Dictionary<int, List<Vector3>>()
@@ -45,70 +54,90 @@ public class StudentCouncilManager : AIManager
         {0, new List<Vector3>()
             {
                 //Example
-                {new Vector3(4.77f,0f,-14.52f)},
+                {new Vector3(154.136276f,49.2101479f,87.9918365f)},
+                {new Vector3(153.75f,49.2101479f,92.4100037f)},
+                {new Vector3(166f,49.2101479f,90.4000015f)}
             }
         },
 
         {1, new List<Vector3>()
             {
                 //Example
-                {new Vector3(4.77f,0f,-14.52f)},
+                {new Vector3(154.136276f,49.2101479f,87.9918365f)},
+                {new Vector3(157.979996f,49.2101479f,87.5199966f)},
+                {new Vector3(166f,49.2101479f,90.4000015f)}
             }
         },
 
         {2, new List<Vector3>()
             {
                 //Example
-                {new Vector3(4.77f,0f,-14.52f)},
+                {new Vector3(118.099998f,30.1649456f,-40f)},
+                {new Vector3(118.099998f,30.1649456f, -13.08f)},
+                {new Vector3(113.760002f,30.1649456f,-54.2299995f)}
             }
         },
 
         {3, new List<Vector3>()
             {
                 //Example
-                {new Vector3(4.77f,0f,-14.52f)},
+                {new Vector3(159.080002f,49.2851105f,80.4599991f)},
+                {new Vector3(165.671f,49.2851105f,89.68f)},
             }
         },
 
         {4, new List<Vector3>()
             {
                 //Example
-                {new Vector3(4.77f,0f,-14.52f)},
+                {new Vector3(159.080002f,49.2851105f,80.4599991f)},
+                {new Vector3(165.671f,49.2851105f,89.68f)},
+                {new Vector3(159.80999f,49.2851105f,87.4199982f)}
             }
         },
 
         {5, new List<Vector3>()
             {
                 //Example
-                {new Vector3(4.77f,0f,-14.52f)},
+                {new Vector3(170.649994f,30.1329575f,-29.6399994f)},
+                {new Vector3(170.649994f,30.1329575f,-7.3f)},
+                {new Vector3(141.64f,30.1329575f,-15f)},
             }
         },
 
         {6, new List<Vector3>()
             {
                 //Example
-                {new Vector3(4.77f,0f,-14.52f)},
+                {new Vector3(154.136276f,49.2101479f,87.9918365f)},
+                {new Vector3(153.75f,49.2101479f,92.4100037f)},
+                {new Vector3(166f,49.2101479f,90.4000015f)},
+                {new Vector3(160.880005f,49.2851105f,91.6100006f)}
             }
         },
 
         {7, new List<Vector3>()
             {
                 //Example
-                {new Vector3(4.77f,0f,-14.52f)},
+                {new Vector3(176.080002f,49.2851105f,80.4599991f)},
+                {new Vector3(165.671f,49.2851105f,89.68f)},
+                {new Vector3(159.809998f,49.2851105f,81.1100006f)}
             }
         },
 
         {8, new List<Vector3>()
             {
                 //Example
-                {new Vector3(4.77f,0f,-14.52f)},
+                {new Vector3(154.136276f,49.2101479f,87.9918365f)},
+                {new Vector3(166f,49.2101479f,90.4000015f)},
+                {new Vector3(160.880005f,49.2851105f,91.6100006f)}
             }
         },
 
         {9, new List<Vector3>()
             {
                 //Example
-                {new Vector3(4.77f,0f,-14.52f)},
+                {new Vector3(154.136276f,49.2101479f,87.9918365f)},
+                {new Vector3(150.75f,49.2101479f,92.4100037f)},
+                {new Vector3(160.880005f,49.2851105f,91.6100006f)}
             }
         },
     };
