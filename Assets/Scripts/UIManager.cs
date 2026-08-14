@@ -90,6 +90,10 @@ public class UIManager : MonoBehaviour
             {
                 text.text = "Talk to " + name;
             }
+            else if(interactType == InteractibleManager.InteractType.GoToCanteen)
+            {
+                text.text = "Teleport to " + name;
+            }
             else
             {
                 text.text = "Interact with " + name;

@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
     {
         {0, new List<string>(){"Walk Around", "Talk to the NPC"} }, //Tutorial
         {1, new List<string>(){"Go for recess"}}, //Starting scenes
-        {2, new List<string>(){"Talk to your friends"}},
+        {2, new List<string>(){"Go to canteen & talk!"}},
         {3, new List<string>(){"Talk to Nigel and Wei Jie"}}, //Roam
         {4, new List<string>(){"Check up on Nigel", "!!! Hide the VAPE!", "Talk to Wei Jie"}},
         {5, new List<string>(){"Talk to Nigel and Wei Jie"}}, //Roam 2
@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
         {"Steal the vape", "Find Nigel's bag and steal the vape as planned!"},
         {"Talk to Nigel about his addiction", "Try to talk to Nigel and see if you can convince him to quit!"},
         {"Talk to Wei Jie", "Wei Jie is look for you because you are missing from the fire drill."},
-        {"Talk to your friends", "You are at the canteen, talk to your friends!" }
+        {"Go to canteen & talk!", "Follow your friends to the canteen. When you reach, talk to your friends!" }
     };
 
     public string sceneName = "MainMenu";
@@ -86,7 +86,10 @@ public class GameManager : MonoBehaviour
 
         if(storyProgress > 0)
         {
-            tutorialItems.SetActive(false);
+            if(GameObject.Find("TutorialItems") != null)
+            {
+                GameObject.Find("TutorialItems").SetActive(false);
+            }
         }
     }
 
@@ -129,13 +132,6 @@ public class GameManager : MonoBehaviour
 
             //Gets the different component after entering game scenes
             sceneName = scene.name;
-
-            if(sceneName == "Classroom")
-            {
-                weijie.transform.position = NPC2Transform.position;
-
-                GameObject.Find("Nigel").transform.position = NPC1Transform.position;
-            }
 
             if(GameObject.Find("CheckPoint") != null)
             {

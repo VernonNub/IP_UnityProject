@@ -99,6 +99,12 @@ public class DialougeManager : MonoBehaviour
 
     public void RunConversation()
     {
+        if((GameManager.instance.storyProgress == 2 || GameManager.instance.storyProgress == 5) && GameManager.instance.sceneName != "Canteen")
+        {
+            CloseUI();
+            return;
+        }
+
         if(!isFixed)
         {
             ChooseConversation();

@@ -9,8 +9,6 @@ public class AIManager : MonoBehaviour
     public PlayerManager playerManager;
 
     [Header("AI Details")]
-
-    protected NavMeshAgent aiAgent;
     protected Vector3 targetDestination;
 
     public bool changeState = true;
@@ -21,39 +19,8 @@ public class AIManager : MonoBehaviour
     public float happiness = 50f;
     public float relationship = 50f;
 
-    protected Animator aiAnimator;
+    public Vector3 stairs = new Vector3(185.509995f,49.2851105f,84.9970016f);
 
-    public Transform stairs;
-
-    void OnEnable()
-    {
-        aiAgent = gameObject.GetComponent<NavMeshAgent>();
-        aiAnimator = gameObject.GetComponent<Animator>();
-    }
-
-    protected void CheckState()
-    {
-        if(aiAgent.remainingDistance == aiAgent.stoppingDistance && !isTalking)
-        {
-            ResetAnimations();   
-            changeState = true;
-
-        }
-    }
-
-    public void TalkToPlayer()
-    {
-        ResetAnimations();
-        isTalking = true;
-
-        //Stop Animations, stop movement
-        //StopMovement
-        aiAgent.SetDestination(gameObject.transform.position);
-
-        //Rotate to face player
-        Vector3 rotation = playerManager.gameObject.transform.position;
-        gameObject.transform.LookAt(rotation);
-    }
 
     public void StopTalkingToPlayer()
     {
@@ -61,16 +28,5 @@ public class AIManager : MonoBehaviour
         isTalking = false;
     }
 
-    public void ResetAnimations()
-    {
-        aiAnimator.SetBool("IsWalking", false);
-    }
-
-    public void ActionFinished()
-    {
-        if(aiAnimator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
-        {
-            actionPerformed = true;
-        }
-    }
+    
 }

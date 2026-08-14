@@ -1,6 +1,7 @@
 using NUnit.Framework.Internal;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Animations;
 
 public class InteractibleManager : MonoBehaviour
 {
@@ -38,14 +39,31 @@ public class InteractibleManager : MonoBehaviour
                     break;
 
                 case InteractType.NPC:
-                    AIManager manager = gameObject.GetComponent<AIManager>();
-                    manager.playerManager = playerManager;
-                    manager.TalkToPlayer();
 
-                    DialougeManager.instance.ai = manager;
+                    if(gameObject.name == "Nigel")
+                    {
+                        VapingStudentManager manager;
+                        manager = gameObject.GetComponent<VapingStudentManager>();
+                        manager.playerManager = playerManager;
+                        manager.TalkToPlayer();
 
-                    DialougeManager.instance.speaker = interactibleName;
-                    DialougeManager.instance.RunConversation();
+                        DialougeManager.instance.ai = manager;
+
+                        DialougeManager.instance.speaker = interactibleName;
+                        DialougeManager.instance.RunConversation();
+                    }
+                    else
+                    {
+                        StudentCouncilManager manager;
+                        manager = gameObject.GetComponent<StudentCouncilManager>();
+                        manager.playerManager = playerManager;
+                        manager.TalkToPlayer();
+
+                        DialougeManager.instance.ai = manager;
+
+                        DialougeManager.instance.speaker = interactibleName;
+                        DialougeManager.instance.RunConversation();
+                    }
                     break;
 
                 case InteractType.HideVape:

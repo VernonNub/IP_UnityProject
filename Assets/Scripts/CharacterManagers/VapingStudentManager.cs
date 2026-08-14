@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VectorGraphics;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.Animations;
 
 public class VapingStudentManager : AIManager
@@ -45,14 +46,14 @@ public class VapingStudentManager : AIManager
         {0, new List<Vector3>()
             {
                 //Example
-                {new Vector3(4.77f,0f,-14.52f)},
+                {new Vector3(164.841995f,49.2851105f,84.9970016f)},
             }
         },
 
         {1, new List<Vector3>()
             {
                 //Example
-                {new Vector3(4.77f,0f,-14.52f)},
+                {new Vector3(165.809998f,49.2851105f,80.5800018f)},
             }
         },
 
@@ -66,7 +67,7 @@ public class VapingStudentManager : AIManager
         {3, new List<Vector3>()
             {
                 //Example
-                {new Vector3(4.77f,0f,-14.52f)},
+                {new Vector3(165.809998f,49.2851105f,80.5800018f)},
             }
         },
 
@@ -87,33 +88,40 @@ public class VapingStudentManager : AIManager
         {6, new List<Vector3>()
             {
                 //Example
-                {new Vector3(4.77f,0f,-14.52f)},
+                {new Vector3(164.841995f,49.2851105f,84.9970016f)},
             }
         },
 
         {7, new List<Vector3>()
             {
                 //Example
-                {new Vector3(4.77f,0f,-14.52f)},
+                {new Vector3(165.809998f,49.2851105f,80.5800018f)},
             }
         },
 
         {8, new List<Vector3>()
             {
                 //Example
-                {new Vector3(4.77f,0f,-14.52f)},
+                {new Vector3(164.841995f,49.2851105f,84.9970016f)},
             }
         },
 
         {9, new List<Vector3>()
             {
                 //Example
-                {new Vector3(4.77f,0f,-14.52f)},
+                {new Vector3(164.841995f,49.2851105f,84.9970016f)},
             }
         },
     };
 
-    
+    protected Animator aiAnimator;
+    protected NavMeshAgent aiAgent;
+
+    void OnEnable()
+    {
+        aiAnimator = gameObject.GetComponent<Animator>();
+        aiAgent = gameObject.GetComponent<NavMeshAgent>();
+    }
 
     //Current AI State
     public AiStates aiStates = AiStates.Moving;
@@ -161,11 +169,12 @@ public class VapingStudentManager : AIManager
 
     protected void MoveToDestination()
     {
+        Debug.Log("Trying to move");
         Vector3 destination;
 
-        if((GameManager.instance.storyProgress == 2 || GameManager.instance.storyProgress == 5) && GameManager.instance.sceneName == "Canteen")
+        if((GameManager.instance.storyProgress == 2 || GameManager.instance.storyProgress == 5) && GameManager.instance.sceneName != "Canteen")
         {
-            destination = stairs.position;
+            destination = stairs;
         }
         else
         {
@@ -173,10 +182,15 @@ public class VapingStudentManager : AIManager
             destination = aiMovement[GameManager.instance.storyProgress][UnityEngine.Random.Range(0, aiMovement[GameManager.instance.storyProgress].Count)];
         }
 
+        Debug.Log("Moving");
+        Debug.Log(destination);
+        Debug.Log(targetDestination);
+
         if(destination != targetDestination)
         {
             targetDestination = destination;
             aiAgent.SetDestination(targetDestination);
+            Debug.Log(targetDestination);
         }
     }
 
@@ -214,5 +228,42 @@ public class VapingStudentManager : AIManager
                 changeState = false;
                 break;
         }
+    }
+
+    public void ResetAnimations()
+    {
+        aiAnimator.SetBool("IsWalking", false);
+    }
+
+    public void ActionFinished()
+    {
+        if(aiAnimator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+        {
+            actionPerformed = true;
+        }
+    }
+
+    protected void CheckState()
+    {
+        if(aiAgent.remainingDistance == aiAgent.stoppingDistance && !isTalking)
+        {
+            ResetAnimations();   
+            changeState = true;
+
+        }
+    }
+
+    public void TalkToPlayer()
+    {
+        ResetAnimations();
+        isTalking = true;
+
+        //Stop Animations, stop movement
+        //StopMovement
+        aiAgent.SetDestination(gameObject.transform.position);
+
+        //Rotate to face player
+        Vector3 rotation = playerManager.gameObject.transform.position;
+        gameObject.transform.LookAt(rotation);
     }
 }

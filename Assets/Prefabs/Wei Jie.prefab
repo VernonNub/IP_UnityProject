@@ -936,10 +936,10 @@ PrefabInstance:
       addedObject: {fileID: 3587862228577685985}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0e14804c825f5444ab15c7f1045c9d34, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6770341420566246749}
+      addedObject: {fileID: 5833605545667712944}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0e14804c825f5444ab15c7f1045c9d34, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5833605545667712944}
+      addedObject: {fileID: -2332029767013094003}
   m_SourcePrefab: {fileID: 100100000, guid: 0e14804c825f5444ab15c7f1045c9d34, type: 3}
 --- !u!1 &7638205567183992995 stripped
 GameObject:
@@ -991,31 +991,6 @@ NavMeshAgent:
   m_BaseOffset: -0.08
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &6770341420566246749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7638205567183992995}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eaad6514dce3c1b449003ea2f55c2172, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::VapingStudentManager
-  playerManager: {fileID: 0}
-  navigationPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  aiAgent: {fileID: 0}
-  targetDestination: {fileID: 0}
-  changeState: 1
-  isTalking: 0
-  actionPerformed: 0
-  happiness: 50
-  relationship: 50
-  aiStates: 2
 --- !u!114 &5833605545667712944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1032,4 +1007,26 @@ MonoBehaviour:
   interactibleName: Wei Jie
   requiredItem: 
   vapeLocation: 0
+  isVapePlaced: 0
+  scene: 
   interactType: 0
+--- !u!114 &-2332029767013094003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7638205567183992995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 708af729226937349add671380db30bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StudentCouncilManager
+  playerManager: {fileID: 0}
+  changeState: 1
+  isTalking: 0
+  actionPerformed: 0
+  happiness: 50
+  relationship: 50
+  stairs: {x: 185.51, y: 49.28511, z: 84.997}
+  aiStates: 1

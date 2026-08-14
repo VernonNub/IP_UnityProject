@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorial.unity
     guid: 770e5d4a1ddc0254487bfddacecbfc3d
   - enabled: 1
-    path: Assets/Scenes/Classroom.unity
+    path: Assets/Scenes/234.unity
     guid: 768f594946e67a74a882c17269ac53e5
   - enabled: 1
     path: Assets/Scenes/Canteen.unity
@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Roam1.unity
     guid: 8bd30c42f352732428e6766d49d54c99
   - enabled: 1
-    path: Assets/Scenes/Classroom2.unity
+    path: Assets/Scenes/Classroom.unity
     guid: 5cfd534d39ee6084b899345b6af5a080
   - enabled: 1
     path: Assets/Scenes/Roam3.unity

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VectorGraphics;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.Animations;
 
 public class StudentCouncilManager : AIManager
@@ -112,7 +113,14 @@ public class StudentCouncilManager : AIManager
         },
     };
 
-    
+    protected Animator aiAnimator;
+    protected NavMeshAgent aiAgent;
+
+    void OnEnable()
+    {
+        aiAnimator = gameObject.GetComponent<Animator>();
+        aiAgent = gameObject.GetComponent<NavMeshAgent>();
+    }
 
     //Current AI State
     public AiStates aiStates = AiStates.Moving;
@@ -162,9 +170,9 @@ public class StudentCouncilManager : AIManager
     {
         Vector3 destination;
 
-        if((GameManager.instance.storyProgress == 2 || GameManager.instance.storyProgress == 5) && GameManager.instance.sceneName == "Canteen")
+        if((GameManager.instance.storyProgress == 2 || GameManager.instance.storyProgress == 5) && GameManager.instance.sceneName != "Canteen")
         {
-            destination = stairs.position;
+            destination = stairs;
         }
         else
         {
@@ -208,5 +216,42 @@ public class StudentCouncilManager : AIManager
                 changeState = false;
                 break;
         }
+    }
+
+    public void ResetAnimations()
+    {
+        aiAnimator.SetBool("IsWalking", false);
+    }
+
+    public void ActionFinished()
+    {
+        if(aiAnimator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+        {
+            actionPerformed = true;
+        }
+    }
+
+    protected void CheckState()
+    {
+        if(aiAgent.remainingDistance == aiAgent.stoppingDistance && !isTalking)
+        {
+            ResetAnimations();   
+            changeState = true;
+
+        }
+    }
+
+    public void TalkToPlayer()
+    {
+        ResetAnimations();
+        isTalking = true;
+
+        //Stop Animations, stop movement
+        //StopMovement
+        aiAgent.SetDestination(gameObject.transform.position);
+
+        //Rotate to face player
+        Vector3 rotation = playerManager.gameObject.transform.position;
+        gameObject.transform.LookAt(rotation);
     }
 }
