@@ -53,7 +53,7 @@ public class UIManager : MonoBehaviour
 
     private void UpdateMission()
     {
-        if (GameManager.instance.storyDetails[GameManager.instance.storyProgress][GameManager.instance.sceneProgress -1] == null || GameManager.instance.missionDetails[GameManager.instance.storyDetails[GameManager.instance.storyProgress][GameManager.instance.sceneProgress - 1]] == null)
+        if (GameManager.instance.storyDetails[GameManager.instance.storyProgress][GameManager.instance.sceneProgress -1] == null || GameManager.instance.missionDetails[GameManager.instance.storyDetails[GameManager.instance.storyProgress][GameManager.instance.sceneProgress - 1]] == null || GameManager.instance.storyDetails[GameManager.instance.storyProgress].Count >= GameManager.instance.sceneProgress)
         {
             missionPanel.SetActive(false);
         }
