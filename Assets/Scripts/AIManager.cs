@@ -9,10 +9,9 @@ public class AIManager : MonoBehaviour
     public PlayerManager playerManager;
 
     [Header("AI Details")]
-    public List<Transform> navigationPoints = new List<Transform>();
 
-    [SerializeField] NavMeshAgent aiAgent;
-    [SerializeField] Transform targetDestination;
+    protected NavMeshAgent aiAgent;
+    protected Vector3 targetDestination;
 
     public bool changeState = true;
 
@@ -24,22 +23,12 @@ public class AIManager : MonoBehaviour
 
     protected Animator aiAnimator;
 
+    public Transform stairs;
+
     void OnEnable()
     {
         aiAgent = gameObject.GetComponent<NavMeshAgent>();
         aiAnimator = gameObject.GetComponent<Animator>();
-    }
-
-    protected void MoveToDestination()
-    {
-        aiAnimator.SetBool("IsWalking", true);
-        Transform destination = navigationPoints[Random.Range(0, navigationPoints.Count)];
-
-        if(destination != targetDestination)
-        {
-            targetDestination = destination;
-            aiAgent.SetDestination(targetDestination.position);
-        }
     }
 
     protected void CheckState()
@@ -48,6 +37,7 @@ public class AIManager : MonoBehaviour
         {
             ResetAnimations();   
             changeState = true;
+
         }
     }
 

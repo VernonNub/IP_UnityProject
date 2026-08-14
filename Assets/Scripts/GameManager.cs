@@ -12,27 +12,14 @@ public class GameManager : MonoBehaviour
 
     public GameObject weijie;
 
-    private List<string> scenes = new List<string>()
-    {
-      "MainMenu",
-      "Tutorial",
-      "Classroom",
-      "Canteen",
-      "Roam",
-      "Toilet",
-      "Roam1",
-      "Classroom2",
-      "Roam3",
-      "Classroom3",
-      "Classroom4"
-    };
-
     public int currentScene = 0;
 
     public float NPC1Happiness = 0;
     public float NPC1Relationship = 0;
+    public Transform NPC1Transform;
     public float NPC2Happiness = 0;
     public float NPC2Relationship = 0;
+    public Transform NPC2Transform;
 
     [Header("Story Progression")]
     public int storyProgress = 0;
@@ -42,6 +29,8 @@ public class GameManager : MonoBehaviour
     public AudioClip normalBGM;
     public AudioClip alarmBGM;
     public AudioClip rainBGM;
+
+    public GameObject tutorialItems;
 
     public Dictionary<int, List<string>> storyDetails = new Dictionary<int, List<string>>()
     {
@@ -79,7 +68,7 @@ public class GameManager : MonoBehaviour
         {"Talk to your friends", "You are at the canteen, talk to your friends!" }
     };
 
-    private string sceneName = "MainMenu";
+    public string sceneName = "MainMenu";
 
     private bool canPlay = true;
 
@@ -93,6 +82,11 @@ public class GameManager : MonoBehaviour
         if(canPlay)
         {
             HandleBGM();
+        }
+
+        if(storyProgress > 0)
+        {
+            tutorialItems.SetActive(false);
         }
     }
 
@@ -113,14 +107,17 @@ public class GameManager : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    public void ChangeScene(int index)
+    public void ChangeScene(string scene)
     {
         UIManager.instance.GUI.SetActive(false);
         UIManager.instance.loadingText.SetActive(true);
 
-        currentScene = index;
-        SceneManager.LoadScene(scenes[index]);
+        SceneManager.LoadScene(scene);
+    }
 
+    public void IncreaseProgress()
+    {
+        storyProgress += 1;
         sceneProgress = 1;
     }
 
@@ -132,6 +129,13 @@ public class GameManager : MonoBehaviour
 
             //Gets the different component after entering game scenes
             sceneName = scene.name;
+
+            if(sceneName == "Classroom")
+            {
+                weijie.transform.position = NPC2Transform.position;
+
+                GameObject.Find("Nigel").transform.position = NPC1Transform.position;
+            }
 
             if(GameObject.Find("CheckPoint") != null)
             {

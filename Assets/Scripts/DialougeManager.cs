@@ -136,15 +136,15 @@ public class DialougeManager : MonoBehaviour
             else if (Convert.ToInt32(npcConversations[convoName][dialougeIndex]["Option2Result"]) == -2)
             {
                 //Negative = end of dialouge , -2 = change scene
-                GameManager.instance.storyProgress += 1;
-                GameManager.instance.ChangeScene(GameManager.instance.storyProgress + 1);
+                GameManager.instance.IncreaseProgress();
+                
                 CloseUI();
             }
             else if (Convert.ToInt32(npcConversations[convoName][dialougeIndex]["Option2Result"]) == -3)
             {
                 //Negative = end of dialouge , -3 = change to roam scene
-                GameManager.instance.storyProgress += 1;
-                GameManager.instance.ChangeScene(4);
+                GameManager.instance.IncreaseProgress();
+                
                 CloseUI();
             }
             else if (Convert.ToInt32(npcConversations[convoName][dialougeIndex]["Option2Result"]) == -4)
@@ -216,15 +216,13 @@ public class DialougeManager : MonoBehaviour
         else if (Convert.ToInt32(npcConversations[convoName][dialougeIndex]["Option" + option + "Result"]) == -2)
         {
             //Negative = end of dialouge , -2 = change scene
-            GameManager.instance.storyProgress += 1;
-            GameManager.instance.ChangeScene(GameManager.instance.storyProgress + 1);
+            GameManager.instance.IncreaseProgress();
             CloseUI();
         }
         else if (Convert.ToInt32(npcConversations[convoName][dialougeIndex]["Option" + option + "Result"]) == -3)
         {
             //Negative = end of dialouge , -3 = change to roam scene
-            GameManager.instance.storyProgress += 1;
-            GameManager.instance.ChangeScene(4);
+            GameManager.instance.IncreaseProgress();
             CloseUI();
         }
         else if (Convert.ToInt32(npcConversations[convoName][dialougeIndex]["Option" + option + "Result"]) == -4)
