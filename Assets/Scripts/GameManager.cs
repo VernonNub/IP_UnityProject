@@ -87,18 +87,26 @@ public class GameManager : MonoBehaviour
             HandleBGM();
         }
 
-        if(storyProgress >= 7)
+        if(storyProgress >= 7 && rain1 != null)
         {
             RenderSettings.skybox = skyBoxNight;
             rain1.SetActive(true);
         }
+        else if(rain1 != null)
+        {
+            rain1.SetActive(false);
+        }
 
-        if(storyProgress == 4 || sceneProgress == 2)
+        if ((storyProgress == 4 || sceneProgress == 2) && smoke != null)
         {
             smoke.SetActive(true);
         }
+        else if (smoke != null)
+        {
+            smoke.SetActive(false);
+        }
 
-        if(storyProgress > 0)
+        if (storyProgress > 0)
         {
             if(GameObject.Find("TutorialItems") != null)
             {
@@ -134,6 +142,8 @@ public class GameManager : MonoBehaviour
 
     public void IncreaseProgress()
     {
+        canPlay = true;
+
         storyProgress += 1;
         sceneProgress = 1;
     }
@@ -160,6 +170,15 @@ public class GameManager : MonoBehaviour
             {
                 weijie.SetActive(false);
             }
+        }
+
+        if(sceneName == "Classroom")
+        {
+            smoke = GameObject.Find("Smoke");
+            rain1 = GameObject.Find("Rain");
+
+            smoke.SetActive(false);
+            rain1.SetActive(false);
         }
 
         UIManager.instance.loadingText.SetActive(false);

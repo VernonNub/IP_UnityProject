@@ -29,9 +29,11 @@ public class EventManager : MonoBehaviour
                 switch (gameEvent)
                 {
                     case Events.NextScene:
-                        if(sceneRequired == GameManager.instance.storyProgress)
-                        GameManager.instance.IncreaseProgress();
-                        isUsed = true;
+                        if (sceneRequired == GameManager.instance.storyProgress)
+                        {
+                            GameManager.instance.IncreaseProgress();
+                            isUsed = true;
+                        }
                         break;
 
                     case Events.SceneProgress:
@@ -40,16 +42,19 @@ public class EventManager : MonoBehaviour
                         break;
 
                     case Events.FinalScene:
-                        if (GameManager.instance.NPC1Relationship > GameManager.instance.NPC2Relationship)
+                        if (sceneRequired == GameManager.instance.storyProgress)
                         {
-                            GameManager.instance.IncreaseProgress();
+                            if (GameManager.instance.NPC1Relationship > GameManager.instance.NPC2Relationship)
+                            {
+                                GameManager.instance.IncreaseProgress();
+                            }
+                            else
+                            {
+                                GameManager.instance.storyProgress += 2;
+                                GameManager.instance.sceneProgress = 1;
+                            }
+                            isUsed = true;
                         }
-                        else
-                        {
-                            GameManager.instance.storyProgress += 2;
-                            GameManager.instance.sceneProgress = 1;
-                        }
-                        isUsed = true;
                         break;
 
                     case Events.RemoveVFX:
