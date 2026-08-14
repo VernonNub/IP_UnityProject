@@ -11,6 +11,8 @@ public class InteractibleManager : MonoBehaviour
 
     public int vapeLocation;
 
+    public bool isVapePlaced= false;
+
     public enum InteractType
     {
         NPC,
@@ -46,24 +48,29 @@ public class InteractibleManager : MonoBehaviour
                     break;
 
                 case InteractType.HideVape:
-                    //Check the vape position if its out in the open
-                    if (vapeLocation % 2 == 0)
+                    if(isVapePlaced == false)
                     {
-                        //Run SC sees dialouge
-                        DialougeManager.instance.convoName = "431ConversationWei Jie";
-                        GameManager.instance.sceneProgress += 1;
-                        DialougeManager.instance.isFixed = true;
-                    }
-                    else
-                    {
-                        //Run VP sees dialouge
-                        DialougeManager.instance.convoName = "432ConversationWei Jie";
-                        GameManager.instance.sceneProgress += 1;
-                        DialougeManager.instance.isFixed = true;
-                    }
+                        //Check the vape position if its out in the open
+                        if (vapeLocation % 2 == 0)
+                        {
+                            //Run SC sees dialouge
+                            DialougeManager.instance.convoName = "431ConversationWei Jie";
+                            GameManager.instance.sceneProgress += 1;
+                            DialougeManager.instance.isFixed = true;
+                        }
+                        else
+                        {
+                            //Run VP sees dialouge
+                            DialougeManager.instance.convoName = "432ConversationWei Jie";
+                            GameManager.instance.sceneProgress += 1;
+                            DialougeManager.instance.isFixed = true;
+                        }
 
-                    GameManager.instance.weijie.SetActive(true);
+                        GameManager.instance.weijie.SetActive(true);
 
+                        isVapePlaced = true;
+                    }
+                    
                     break;
             }
         }

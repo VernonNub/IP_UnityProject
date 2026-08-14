@@ -59,16 +59,20 @@ public class VapingStudentManager : AIManager
         Vector3 position = gameObject.transform.position;
         position.y = 0;
 
-        if(aiAction.ContainsKey(GameManager.instance.storyProgress))
+        if(actionPerformed)
         {
-            if (!actionPerformed && aiAction[GameManager.instance.storyProgress].ContainsKey(position))
+            if(aiAction.ContainsKey(GameManager.instance.storyProgress))
             {
-                RunAiAction((AiStates)Enum.Parse(typeof(AiStates), aiAction[GameManager.instance.storyProgress][position]));
+                if (aiAction[GameManager.instance.storyProgress].ContainsKey(position))
+                {
+                    RunAiAction((AiStates)Enum.Parse(typeof(AiStates), aiAction[GameManager.instance.storyProgress][position]));
+                }
+
             }
-            else
-            {
-                RunAiAction(AiStates.Moving);
-            }
+        }
+        else
+        {
+            RunAiAction(AiStates.Moving);
         }
     }
 
