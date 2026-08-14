@@ -137,7 +137,7 @@ public class StudentCouncilManager : AIManager
         Vector3 position = gameObject.transform.position;
         position.y = 0;
 
-        if(actionPerformed)
+        if(!actionPerformed)
         {
             if(aiAction.ContainsKey(GameManager.instance.storyProgress))
             {
@@ -146,6 +146,10 @@ public class StudentCouncilManager : AIManager
                     RunAiAction((AiStates)Enum.Parse(typeof(AiStates), aiAction[GameManager.instance.storyProgress][position]));
                 }
 
+            }
+            else
+            {
+                actionPerformed = true;
             }
         }
         else
