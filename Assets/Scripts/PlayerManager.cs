@@ -43,11 +43,6 @@ public class PlayerManager : MonoBehaviour
     {
         HandleRayCast();
         HandlePlayerSanity();
-
-        if(playerHealth <= 0)
-        {
-            HandleDeath();
-        }
     }
     
     void OnInteract()
@@ -95,11 +90,6 @@ public class PlayerManager : MonoBehaviour
     void OnClick()
     {
         DialougeManager.instance.Fastforward();
-    }
-
-    private void HandleDeath()
-    {
-        UIManager.instance.ShowDeathPopUp();
     }
 
     public void ResetPlayer()

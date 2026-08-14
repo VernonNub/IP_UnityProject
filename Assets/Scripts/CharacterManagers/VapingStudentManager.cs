@@ -59,7 +59,7 @@ public class VapingStudentManager : AIManager
         Vector3 position = gameObject.transform.position;
         position.y = 0;
 
-        if(actionPerformed)
+        if(!actionPerformed)
         {
             if(aiAction.ContainsKey(GameManager.instance.storyProgress))
             {
@@ -68,6 +68,10 @@ public class VapingStudentManager : AIManager
                     RunAiAction((AiStates)Enum.Parse(typeof(AiStates), aiAction[GameManager.instance.storyProgress][position]));
                 }
 
+            }
+            else
+            {
+                actionPerformed = true;
             }
         }
         else

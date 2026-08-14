@@ -49,17 +49,21 @@ public class StudentCouncilManager : AIManager
         Vector3 position = gameObject.transform.position;
         position.y = 0;
 
-        if (aiAction.ContainsKey(GameManager.instance.storyProgress))
-        {
-            if (!actionPerformed && aiAction[GameManager.instance.storyProgress].ContainsKey(position))
+        if(!actionPerformed)
             {
-                RunAiAction((AiStates)Enum.Parse(typeof(AiStates), aiAction[GameManager.instance.storyProgress][position]));
+                if(aiAction.ContainsKey(GameManager.instance.storyProgress))
+                {
+                    if (aiAction[GameManager.instance.storyProgress].ContainsKey(position))
+                    {
+                        RunAiAction((AiStates)Enum.Parse(typeof(AiStates), aiAction[GameManager.instance.storyProgress][position]));
+                    }
+
+                }
             }
             else
             {
                 RunAiAction(AiStates.Moving);
             }
-        }
     }
 
     //Runs the actions
