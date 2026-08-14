@@ -52,6 +52,8 @@ public class InteractibleManager : MonoBehaviour
 
                         DialougeManager.instance.ai = manager;
 
+                        Debug.Log(manager);
+
                         DialougeManager.instance.speaker = interactibleName;
                         DialougeManager.instance.RunConversation();
                     }
@@ -63,6 +65,8 @@ public class InteractibleManager : MonoBehaviour
                         manager.TalkToPlayer();
 
                         DialougeManager.instance.ai = manager;
+
+                        Debug.Log(manager);
 
                         DialougeManager.instance.speaker = interactibleName;
                         DialougeManager.instance.RunConversation();

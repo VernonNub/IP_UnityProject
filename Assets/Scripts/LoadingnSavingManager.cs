@@ -1,4 +1,4 @@
-using System.IO;
+﻿using System.IO;
 using UnityEngine;
 using System;
 using System.Collections.Generic;
@@ -50,33 +50,33 @@ public class LoadingnSavingManager : MonoBehaviour
 
     private Dictionary<string, Dictionary<int, Dictionary<string, object>>> LoadData()
     {
-        string fullPath = Path.Combine(directoryPath, fileName);
+        TextAsset jsonFile = Resources.Load<TextAsset>("NPCConversations");
 
-        Dictionary<string, Dictionary<int, Dictionary<string, object>>> loadedData = null;
-        if(File.Exists(fullPath))
+        if (jsonFile == null)
         {
-            try
-            {
-                Debug.Log("Loading");
-                string dataToLoad = "";
-                using (FileStream stream = new FileStream(fullPath, FileMode.Open))
-                {
-                    using (StreamReader reader = new StreamReader(stream))
-                    {
-                        dataToLoad = reader.ReadToEnd();
-                        Debug.Log("Loaded");
-                        Debug.Log(dataToLoad);
-                    }
-                }
-
-                loadedData = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<int, Dictionary<string, object>>>>(dataToLoad);
-            }
-            catch (Exception e)
-            {
-                Debug.LogException(e);
-            }
+            Debug.LogError("NPCConversations.json NOT FOUND!");
+            return new Dictionary<string, Dictionary<int, Dictionary<string, object>>>();
         }
 
-        return loadedData;
+        Debug.Log("NPCConversations.json FOUND!");
+
+        try
+        {
+            var loadedData =
+                JsonConvert.DeserializeObject<
+                    Dictionary<string, Dictionary<int, Dictionary<string, object>>>
+                >(jsonFile.text);
+
+            Debug.Log("JSON loaded successfully!");
+
+            return loadedData;
+        }
+        catch (Exception e)
+        {
+            Debug.LogError("JSON failed to load!");
+            Debug.LogException(e);
+
+            return new Dictionary<string, Dictionary<int, Dictionary<string, object>>>();
+        }
     }
 }

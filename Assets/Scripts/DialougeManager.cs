@@ -99,13 +99,17 @@ public class DialougeManager : MonoBehaviour
 
     public void RunConversation()
     {
+        Debug.Log(GameManager.instance.storyProgress);
+
         if((GameManager.instance.storyProgress == 2 || GameManager.instance.storyProgress == 5) && GameManager.instance.sceneName != "Canteen")
         {
             CloseUI();
             return;
         }
 
-        if(!isFixed)
+        Debug.Log(ai);
+
+        if (!isFixed)
         {
             ChooseConversation();
         }
@@ -116,10 +120,13 @@ public class DialougeManager : MonoBehaviour
             return;
         }
 
+        Debug.Log("UI issue");
         OpenUI();
 
         //Get the text to display
         dialougeTextToDisplay = npcConversations[convoName][dialougeIndex]["Text"].ToString();
+        Debug.Log(dialougeTextToDisplay);
+
         speakerName.text = speaker;
         StartCoroutine(TypeOutDialouge());
 
@@ -294,6 +301,7 @@ public class DialougeManager : MonoBehaviour
 
     private void OpenUI()
     {
+        Debug.Log(dialougeUI);
         dialougeUI.gameObject.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
     }

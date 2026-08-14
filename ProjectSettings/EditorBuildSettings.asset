@@ -8,34 +8,34 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Tutorial.unity
-    guid: 770e5d4a1ddc0254487bfddacecbfc3d
+    guid: 63111d4edc0e38942a865c43dc392e7a
   - enabled: 1
-    path: Assets/Scenes/234.unity
+    path: Assets/Scenes/Classroom.unity
     guid: 768f594946e67a74a882c17269ac53e5
   - enabled: 1
     path: Assets/Scenes/Canteen.unity
     guid: 45591dfe4e6a96c43bd44d766905b43c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Roam.unity
     guid: 5a62553eafe8deb4fbb8c1195c3e1eb9
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Toilet.unity
     guid: 482f1bb7b7e2e9d40a9c3e93868bb326
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Roam1.unity
     guid: 8bd30c42f352732428e6766d49d54c99
-  - enabled: 1
-    path: Assets/Scenes/Classroom.unity
+  - enabled: 0
+    path: Assets/Scenes/Classroom2.unity
     guid: 5cfd534d39ee6084b899345b6af5a080
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Roam3.unity
     guid: f8092d174131ca04db5d3fade2ef6e87
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Classroom3.unity
     guid: 445f902a659007f46994170419fbbc63
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Classroom4.unity
     guid: 99c87cc8c88162b4ab3f765bb2ba2dce
   m_configObjects:

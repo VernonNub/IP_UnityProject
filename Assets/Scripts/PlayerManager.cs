@@ -1,7 +1,4 @@
 using System.Collections.Generic;
-using System.Xml.Serialization;
-using NUnit.Framework;
-using UnityEditor.Search;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
