@@ -165,7 +165,7 @@ public class GameManager : MonoBehaviour
         else
         {
             bgm.clip = normalBGM;
-            bgm.volume = 0.05f;
+            bgm.volume = 0.2f;
 
             bgm.Play();
         }
