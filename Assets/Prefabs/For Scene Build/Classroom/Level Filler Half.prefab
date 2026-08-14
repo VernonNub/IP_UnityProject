@@ -378,16 +378,20 @@ PrefabInstance:
       value: Filler Between Levels Flat (19)
       objectReference: {fileID: 0}
     - target: {fileID: 7282920039874057341, guid: 068b639c34cd908438964709b135c84c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1414
+      objectReference: {fileID: 0}
+    - target: {fileID: 7282920039874057341, guid: 068b639c34cd908438964709b135c84c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.000007869675
       objectReference: {fileID: 0}
     - target: {fileID: 7282920039874057341, guid: 068b639c34cd908438964709b135c84c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.045642853
+      value: -0.045646667
       objectReference: {fileID: 0}
     - target: {fileID: 7282920039874057341, guid: 068b639c34cd908438964709b135c84c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.35
+      value: 7.492441
       objectReference: {fileID: 0}
     - target: {fileID: 7282920039874057341, guid: 068b639c34cd908438964709b135c84c, type: 3}
       propertyPath: m_LocalRotation.w
