@@ -14,6 +14,8 @@ public class EventManager : MonoBehaviour
         Alarm
     }
 
+    public int sceneRequired;
+
     public Events gameEvent;
 
     public GameObject VFX;
@@ -27,6 +29,7 @@ public class EventManager : MonoBehaviour
                 switch (gameEvent)
                 {
                     case Events.NextScene:
+                        if(sceneRequired == 3 || sceneRequired == 5 || sceneRequired == 7)
                         GameManager.instance.IncreaseProgress();
                         isUsed = true;
                         break;

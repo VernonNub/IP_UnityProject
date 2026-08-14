@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     public AudioClip normalBGM;
     public AudioClip alarmBGM;
     public AudioClip rainBGM;
-
+    public Material skyBoxNight;
     public GameObject tutorialItems;
 
     public Dictionary<int, List<string>> storyDetails = new Dictionary<int, List<string>>()
@@ -72,6 +72,9 @@ public class GameManager : MonoBehaviour
 
     private bool canPlay = true;
 
+    public GameObject smoke;
+    public GameObject rain1;
+
     private void Update()
     {
         if(storyProgress == 0 && sceneProgress == 3)
@@ -82,6 +85,17 @@ public class GameManager : MonoBehaviour
         if(canPlay)
         {
             HandleBGM();
+        }
+
+        if(storyProgress >= 7)
+        {
+            RenderSettings.skybox = skyBoxNight;
+            rain1.SetActive(true);
+        }
+
+        if(storyProgress == 4 || sceneProgress == 2)
+        {
+            smoke.SetActive(true);
         }
 
         if(storyProgress > 0)

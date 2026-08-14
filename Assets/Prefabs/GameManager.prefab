@@ -44,4 +44,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63f8f3c1cc3571940a24dd7733f32db4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  playerManager: {fileID: 0}
+  weijie: {fileID: 0}
+  currentScene: 0
+  NPC1Happiness: 0
+  NPC1Relationship: 0
+  NPC1Transform: {fileID: 0}
+  NPC2Happiness: 0
+  NPC2Relationship: 0
+  NPC2Transform: {fileID: 0}
   storyProgress: 1
+  sceneProgress: 1
+  bgm: {fileID: 0}
+  normalBGM: {fileID: 0}
+  alarmBGM: {fileID: 0}
+  rainBGM: {fileID: 0}
+  skyBoxNight: {fileID: 0}
+  tutorialItems: {fileID: 0}
+  sceneName: MainMenu
+  smoke: {fileID: 7816763448394875818, guid: 9e83c51592327f7429779b9d21121320, type: 3}
+  rain1: {fileID: 6422375667866632276, guid: c4ecec83d7f94474fad600c0c3302c28, type: 3}
