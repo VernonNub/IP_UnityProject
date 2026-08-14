@@ -119,6 +119,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &138087200
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 138087201}
+  m_Layer: 6
+  m_Name: Nigel Walk Point 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &138087201
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138087200}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 108.36, y: 30.132957, z: -6.31}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &587887667
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -127,6 +158,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 607657747953555802, guid: 2360a965963fab646ab6a9ea926ade54, type: 3}
+      propertyPath: targetDestination
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 607657747953555802, guid: 2360a965963fab646ab6a9ea926ade54, type: 3}
+      propertyPath: 'navigationPoints.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1865089645}
+    - target: {fileID: 607657747953555802, guid: 2360a965963fab646ab6a9ea926ade54, type: 3}
+      propertyPath: 'navigationPoints.Array.data[1]'
+      value: 
+      objectReference: {fileID: 748733829}
+    - target: {fileID: 607657747953555802, guid: 2360a965963fab646ab6a9ea926ade54, type: 3}
+      propertyPath: 'navigationPoints.Array.data[2]'
+      value: 
+      objectReference: {fileID: 138087201}
     - target: {fileID: 5817245435333376045, guid: 2360a965963fab646ab6a9ea926ade54, type: 3}
       propertyPath: m_Name
       value: Nigel
@@ -233,6 +280,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0879e15cff83a6a4caab52ad7bc83a57, type: 3}
+--- !u!1 &748733828
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 748733829}
+  m_Layer: 6
+  m_Name: Nigel Walk Start
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &748733829
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748733828}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 112.81, y: 30.132957, z: -29.64}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &758795923
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -259,7 +337,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2011183156931963604, guid: e4ab77bfa5961c643927205c1f91c781, type: 3}
       propertyPath: ShapeModule.radiusThickness
-      value: 1.0000
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2011183156931963604, guid: e4ab77bfa5961c643927205c1f91c781, type: 3}
       propertyPath: InitialModule.maxNumParticles
@@ -533,6 +611,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1865089644
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865089645}
+  m_Layer: 0
+  m_Name: Nigel Walk Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1865089645
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865089644}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 91.59, y: 30.13296, z: -28.18}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3429759608816498521
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -915,3 +1024,6 @@ SceneRoots:
   - {fileID: 587887667}
   - {fileID: 1644026360}
   - {fileID: 758795923}
+  - {fileID: 1865089645}
+  - {fileID: 748733829}
+  - {fileID: 138087201}

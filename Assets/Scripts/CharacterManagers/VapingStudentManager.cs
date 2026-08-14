@@ -24,6 +24,16 @@ public class VapingStudentManager : AIManager
             {
                 //Example
                 {new Vector3(4.77f,0f,-14.52f), "Talking"},
+                {new Vector3(176.330002f,0f,80.5199966f), "Thinking"},
+                {new Vector3(153.190002f,0f,91.4150009f), "Thinking"},
+                {new Vector3(91.5899963f,0f,-28.1800003f), "Idle"},
+                {new Vector3(112.809998f,0f,-29.6399994f), "Idle"},
+                {new Vector3(165.017136f,0f,81.2013779f), "Idle"},
+                {new Vector3(164.679993f ,0f,-7.25f), "Idle"},
+                {new Vector3(170.175079f ,0f,81.0924759f), "Thinking"},
+                {new Vector3(153.320007f,0f,85.7399979f), "Idle"},
+                {new Vector3(165.029999f,0f,86.7200012f), "Thinking"}
+
             }
         },
     };
