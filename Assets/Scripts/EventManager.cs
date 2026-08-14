@@ -27,8 +27,7 @@ public class EventManager : MonoBehaviour
                 switch (gameEvent)
                 {
                     case Events.NextScene:
-                        GameManager.instance.storyProgress += 1;
-                        GameManager.instance.ChangeScene(GameManager.instance.storyProgress + 1);
+                        GameManager.instance.IncreaseProgress();
                         isUsed = true;
                         break;
 
@@ -40,13 +39,12 @@ public class EventManager : MonoBehaviour
                     case Events.FinalScene:
                         if (GameManager.instance.NPC1Relationship > GameManager.instance.NPC2Relationship)
                         {
-                            GameManager.instance.storyProgress += 1;
-                            GameManager.instance.ChangeScene(GameManager.instance.storyProgress + 1);
+                            GameManager.instance.IncreaseProgress();
                         }
                         else
                         {
                             GameManager.instance.storyProgress += 2;
-                            GameManager.instance.ChangeScene(GameManager.instance.storyProgress + 1);
+                            GameManager.instance.sceneProgress = 1;
                         }
                         isUsed = true;
                         break;
@@ -74,9 +72,6 @@ public class EventManager : MonoBehaviour
                     break;
 
                 case Events.Alarm:
-                    Debug.Log("ALARM TRIGGERED");
-                    Debug.Log("Story Progress: " + GameManager.instance.storyProgress);
-                    Debug.Log("Scene Progress: " + GameManager.instance.sceneProgress);
                     if (!isUsed)
                     {
                         if (GameManager.instance.storyProgress == 4 && GameManager.instance.sceneProgress > 1)

@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VectorGraphics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Animations;
 
@@ -9,11 +11,10 @@ public class StudentCouncilManager : AIManager
     //AI States to change between (The action that your AI performs)
     public enum AiStates
     {
-        Vaping,
-        Talking, 
+        Talking,
         Moving,
-        Scolding, 
-        Idle
+        Scold,
+        Idle,
     }
 
     //Add your states here
@@ -24,9 +25,94 @@ public class StudentCouncilManager : AIManager
             {
                 //Example
                 {new Vector3(4.77f,0f,-14.52f), "Talking"},
-            } 
+                {new Vector3(176.330002f,0f,80.5199966f), "Thinking"},
+                {new Vector3(153.190002f,0f,91.4150009f), "Thinking"},
+                {new Vector3(91.5899963f,0f,-28.1800003f), "Idle"},
+                {new Vector3(112.809998f,0f,-29.6399994f), "Idle"},
+                {new Vector3(165.017136f,0f,81.2013779f), "Idle"},
+                {new Vector3(164.679993f ,0f,-7.25f), "Idle"},
+                {new Vector3(170.175079f ,0f,81.0924759f), "Thinking"},
+                {new Vector3(153.320007f,0f,85.7399979f), "Idle"},
+                {new Vector3(165.029999f,0f,86.7200012f), "Thinking"}
+
+            }
         },
     };
+
+    public Dictionary<int, List<Vector3>> aiMovement = new Dictionary<int, List<Vector3>>()
+    {
+        {0, new List<Vector3>()
+            {
+                //Example
+                {new Vector3(4.77f,0f,-14.52f)},
+            }
+        },
+
+        {1, new List<Vector3>()
+            {
+                //Example
+                {new Vector3(4.77f,0f,-14.52f)},
+            }
+        },
+
+        {2, new List<Vector3>()
+            {
+                //Example
+                {new Vector3(4.77f,0f,-14.52f)},
+            }
+        },
+
+        {3, new List<Vector3>()
+            {
+                //Example
+                {new Vector3(4.77f,0f,-14.52f)},
+            }
+        },
+
+        {4, new List<Vector3>()
+            {
+                //Example
+                {new Vector3(4.77f,0f,-14.52f)},
+            }
+        },
+
+        {5, new List<Vector3>()
+            {
+                //Example
+                {new Vector3(4.77f,0f,-14.52f)},
+            }
+        },
+
+        {6, new List<Vector3>()
+            {
+                //Example
+                {new Vector3(4.77f,0f,-14.52f)},
+            }
+        },
+
+        {7, new List<Vector3>()
+            {
+                //Example
+                {new Vector3(4.77f,0f,-14.52f)},
+            }
+        },
+
+        {8, new List<Vector3>()
+            {
+                //Example
+                {new Vector3(4.77f,0f,-14.52f)},
+            }
+        },
+
+        {9, new List<Vector3>()
+            {
+                //Example
+                {new Vector3(4.77f,0f,-14.52f)},
+            }
+        },
+    };
+
+    
 
     //Current AI State
     public AiStates aiStates = AiStates.Moving;
@@ -38,8 +124,10 @@ public class StudentCouncilManager : AIManager
         ActionFinished();
 
         //Checks changeState flag --> changes state if its true (Meaning AI can change action)
-        if (changeState)
+        if(changeState) 
         {
+            GameManager.instance.NPC2Transform = gameObject.transform;
+
             ChangeState();
         }
     }
@@ -49,21 +137,42 @@ public class StudentCouncilManager : AIManager
         Vector3 position = gameObject.transform.position;
         position.y = 0;
 
-        if(!actionPerformed)
+        if(actionPerformed)
+        {
+            if(aiAction.ContainsKey(GameManager.instance.storyProgress))
             {
-                if(aiAction.ContainsKey(GameManager.instance.storyProgress))
+                if (aiAction[GameManager.instance.storyProgress].ContainsKey(position))
                 {
-                    if (aiAction[GameManager.instance.storyProgress].ContainsKey(position))
-                    {
-                        RunAiAction((AiStates)Enum.Parse(typeof(AiStates), aiAction[GameManager.instance.storyProgress][position]));
-                    }
-
+                    RunAiAction((AiStates)Enum.Parse(typeof(AiStates), aiAction[GameManager.instance.storyProgress][position]));
                 }
+
             }
-            else
-            {
-                RunAiAction(AiStates.Moving);
-            }
+        }
+        else
+        {
+            RunAiAction(AiStates.Moving);
+        }
+    }
+
+    protected void MoveToDestination()
+    {
+        Vector3 destination;
+
+        if((GameManager.instance.storyProgress == 2 || GameManager.instance.storyProgress == 5) && GameManager.instance.sceneName == "Canteen")
+        {
+            destination = stairs.position;
+        }
+        else
+        {
+            aiAnimator.SetBool("IsWalking", true);
+            destination = aiMovement[GameManager.instance.storyProgress][UnityEngine.Random.Range(0, aiMovement[GameManager.instance.storyProgress].Count)];
+        }
+
+        if(destination != targetDestination)
+        {
+            targetDestination = destination;
+            aiAgent.SetDestination(targetDestination);
+        }
     }
 
     //Runs the actions
@@ -79,14 +188,17 @@ public class StudentCouncilManager : AIManager
                 changeState = false;
                 MoveToDestination();
                 break;
+
+            case AiStates.Scold:
+                aiAnimator.SetTrigger("Scold");
+                changeState = false;
+                break;
+
             case AiStates.Talking:
                 aiAnimator.SetTrigger("Talk");
                 changeState = false;
                 break;
-            case AiStates.Scolding:
-                aiAnimator.SetTrigger("Scold");
-                changeState = false;
-                break;
+
             case AiStates.Idle:
                 aiAnimator.SetTrigger("Idle");
                 changeState = false;

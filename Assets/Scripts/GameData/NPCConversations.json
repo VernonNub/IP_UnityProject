@@ -4,8 +4,29 @@
       "Text": "Welcome to the game!",
       "Option1": "Yay",
       "Option2": "Yippe",
-      "Option1Result": -4,
-      "Option2Result": -4,
+      "Option1Result": -2,
+      "Option2Result": -2,
+      "Option1Stat": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "Option2Stat": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "02ConversationWei Jie": {
+    "1": {
+      "Text": "Welcome to the game!",
+      "Option1": "Yay",
+      "Option2": "Yippe",
+      "Option1Result": -2,
+      "Option2Result": -2,
       "Option1Stat": [
         0.0,
         0.0,

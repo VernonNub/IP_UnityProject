@@ -13,13 +13,14 @@ public class InteractibleManager : MonoBehaviour
 
     public bool isVapePlaced= false;
 
+    public string scene;
+
     public enum InteractType
     {
         NPC,
-        Door,
         Collect,
-        Windows,
         HideVape,
+        GoToCanteen,
         
     }
 
@@ -71,6 +72,10 @@ public class InteractibleManager : MonoBehaviour
                         isVapePlaced = true;
                     }
                     
+                    break;
+
+                case InteractType.GoToCanteen:
+                    GameManager.instance.ChangeScene(scene);
                     break;
             }
         }

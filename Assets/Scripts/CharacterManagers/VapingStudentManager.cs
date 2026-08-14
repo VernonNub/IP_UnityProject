@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VectorGraphics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Animations;
 
@@ -38,6 +40,81 @@ public class VapingStudentManager : AIManager
         },
     };
 
+    public Dictionary<int, List<Vector3>> aiMovement = new Dictionary<int, List<Vector3>>()
+    {
+        {0, new List<Vector3>()
+            {
+                //Example
+                {new Vector3(4.77f,0f,-14.52f)},
+            }
+        },
+
+        {1, new List<Vector3>()
+            {
+                //Example
+                {new Vector3(4.77f,0f,-14.52f)},
+            }
+        },
+
+        {2, new List<Vector3>()
+            {
+                //Example
+                {new Vector3(4.77f,0f,-14.52f)},
+            }
+        },
+
+        {3, new List<Vector3>()
+            {
+                //Example
+                {new Vector3(4.77f,0f,-14.52f)},
+            }
+        },
+
+        {4, new List<Vector3>()
+            {
+                //Example
+                {new Vector3(4.77f,0f,-14.52f)},
+            }
+        },
+
+        {5, new List<Vector3>()
+            {
+                //Example
+                {new Vector3(4.77f,0f,-14.52f)},
+            }
+        },
+
+        {6, new List<Vector3>()
+            {
+                //Example
+                {new Vector3(4.77f,0f,-14.52f)},
+            }
+        },
+
+        {7, new List<Vector3>()
+            {
+                //Example
+                {new Vector3(4.77f,0f,-14.52f)},
+            }
+        },
+
+        {8, new List<Vector3>()
+            {
+                //Example
+                {new Vector3(4.77f,0f,-14.52f)},
+            }
+        },
+
+        {9, new List<Vector3>()
+            {
+                //Example
+                {new Vector3(4.77f,0f,-14.52f)},
+            }
+        },
+    };
+
+    
+
     //Current AI State
     public AiStates aiStates = AiStates.Moving;
 
@@ -50,6 +127,8 @@ public class VapingStudentManager : AIManager
         //Checks changeState flag --> changes state if its true (Meaning AI can change action)
         if(changeState) 
         {
+            GameManager.instance.NPC1Transform = gameObject.transform;
+
             ChangeState();
         }
     }
@@ -77,6 +156,27 @@ public class VapingStudentManager : AIManager
         else
         {
             RunAiAction(AiStates.Moving);
+        }
+    }
+
+    protected void MoveToDestination()
+    {
+        Vector3 destination;
+
+        if((GameManager.instance.storyProgress == 2 || GameManager.instance.storyProgress == 5) && GameManager.instance.sceneName == "Canteen")
+        {
+            destination = stairs.position;
+        }
+        else
+        {
+            aiAnimator.SetBool("IsWalking", true);
+            destination = aiMovement[GameManager.instance.storyProgress][UnityEngine.Random.Range(0, aiMovement[GameManager.instance.storyProgress].Count)];
+        }
+
+        if(destination != targetDestination)
+        {
+            targetDestination = destination;
+            aiAgent.SetDestination(targetDestination);
         }
     }
 
